@@ -14,6 +14,6 @@ For updating files, use
 
 
 git add .                      # stages all files or subfolders
-git commit -m "Added images"   # commits changes
+git commit -m "Added files"   # commits changes
 git push origin main           # uploads to GitHub
 

@@ -35,6 +35,9 @@ git remote add origin https://github.com/username/reposname.git
 git push -u origin main
 
 
+When you are on your GitHub repository page, you can go to Settings -> Pages and then change the settings as follows:
+	- Under Branch you choose main and then /(root)
+	- then click the save button
 After a while you should be able to access your hosted websites. The index.html file in your root folder will create a website with the following name (if you substitute username and reposname with your own names):
 
 https://username.github.io/reposname/
