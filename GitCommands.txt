@@ -17,3 +17,12 @@ git add .                      # stages all files or subfolders
 git commit -m "Added files"   # commits changes
 git push origin main           # uploads to GitHub
 
+
+
+
+
+
+
+In some cases you may need
+
+git push origin main --force

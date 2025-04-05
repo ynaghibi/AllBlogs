@@ -69,4 +69,12 @@ will add all files to the queue before commiting their updated version on GitHub
 git add TestPart1/MyImage.png
 
 
+I always recommend changing files on your local computer and then pushing it on GitHub, instead of changing files on GitHub directly. Otherwise you may get problems pushing future changes. In those case you can force an overwrite by using
+
+
+git push origin main --force
+
+
+although this is not recommended, because overwriting files like this should be the last option. Another benefit of changing your files locally first is that you will have the latest versions on your own computer without having to worry that they may get lost on the web.
+
 And this is the last line of our README for Dummies. I hope it did not insult your intelligence.
