@@ -1,0 +1,6293 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{bbm}
+\usepackage{bbold} %does this have any problems with \bigtimes operator defined below?
+%\usepackage{graphicx}
+%\usepackage{background}
+\usepackage{amsmath}
+
+\allowdisplaybreaks %allows page breaks for multiline formula
+
+\setlength{\parskip}{\medskipamount} %small, med or big
+\setlength{\parindent}{0pt}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\definecolor{backDef}{HTML}{8fb8e0}
+\definecolor{titleDef}{HTML}{ffffff}
+\definecolor{backCalc}{HTML}{E8F2F2}
+
+\newcommand{\BIGOP}[1]{\mathop{\mathchoice%
+{\raise-0.22em\hbox{\huge $#1$}}%
+{\raise-0.05em\hbox{\Large $#1$}}{\hbox{\large $#1$}}{#1}}}
+
+
+%New Stuff, different from usual preambles:
+\usepackage{algorithm,algpseudocode}
+\usepackage{xcolor}
+
+\usepackage{lineno}
+\definecolor{mypink1}{HTML}{8f194c}
+\renewcommand{\linenumberfont}{\normalfont\sffamily\scriptsize\color{mypink1}}
+\end_preamble
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-ams
+figs-within-sections
+theorems-sec
+theorems-ams-extended
+eqs-within-sections
+\end_modules
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "ae" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\pdf_quoted_options "pdfstartview={XYZ null null 1.25}"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #8fb8e0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1cm
+\rightmargin 2cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\listings_params "mathescape=true"
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\bigtimes}{\BIGOP{\times}}
+{\boldsymbol{\times}}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\d}[1]{\frac{\textrm{d}}{\textrm{d}#1}}
+{\frac{\textrm{d}}{\textrm{d}#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pp}{\,\,.}
+{\,\,.}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\kk}{\,\,,}
+{\,\,,}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\image}{\textrm{Image}}
+{\textrm{Image}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\r}{\textrm{Ran}}
+{\textrm{Ran}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\k}{\textrm{Ker}}
+{\textrm{Ker}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tr}{\textrm{tr}}
+{\textrm{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\i}[4]{\int_{#1}^{#2}#3\textrm{d}#4}
+{\int_{#1}^{#2}#3\textrm{d}#4}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sgn}[1]{\textrm{sgn}\left(#1\right)}
+{\textrm{sgn}\left(#1\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sym}[1]{\textrm{Sym}_{#1}}
+{\textrm{Sym}_{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\set}[2]{\left\{  #1\,:\,#2\right\}  }
+{\left\{ #1\,:\,#2\right\} }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sc}[2]{\left\langle #1,\,#2\right\rangle _{\mathcal{K}_{\underline{\alpha}}}}
+{\left\langle #1,\,#2\right\rangle _{\mathcal{K}_{\underline{\alpha}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Sc}[2]{\left\langle #1,\,#2\right\rangle _{L_{\underline{\alpha}}^{2}}}
+{\left\langle #1,\,#2\right\rangle _{L_{\underline{\alpha}}^{2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\no}[1]{\left\Vert #1\right\Vert _{\mathcal{K}_{\underline{\alpha}}}}
+{\left\Vert #1\right\Vert _{\mathcal{K}_{\underline{\alpha}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\No}[1]{\left\Vert #1\right\Vert _{L_{\underline{\alpha}}^{2}}}
+{\left\Vert #1\right\Vert _{L_{\underline{\alpha}}^{2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\K}{\mathcal{K}}
+{\mathcal{K}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hs}{\hspace{-1bp}}
+{{\color{red}|}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\proofend}{\hfill\square}
+{\hfill\square}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ownname}[1]{\textsc{#1}}
+{\textsc{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bskip}[1]{\vspace*{-\baselineskip}\,\vspace*{#1cm}}
+{\updownarrow#1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\VertOp}[3]{\!\!\!\begin{array}{c}
+{\scriptstyle #3}\bskip{-0.1}\\
+#1\bskip{-0.1}\\
+{\scriptstyle #2}
+\end{array}\!\!\!}
+{#1_{#2}^{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sto}{\square}
+{\square}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ost}{\blacksquare}
+{\blacksquare}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup 
+\backslash
+hypersetup{linkcolor=black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Quick Info
+\end_layout
+
+\begin_layout Description
+Audience:
+ This part of the series is made for people who are already familiar with basic concepts in machine learning (see previous part).
+ 
+\end_layout
+
+\begin_layout Description
+Goal:
+ Predict house sale prices in a Kaggle beginner competition using machine learning in Python.
+ 
+\end_layout
+
+\begin_layout Description
+Resources:
+ On my GitHub page you can download the whole guide as a PDF or find the links to all parts of this series.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+PDF:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/Machine_Learning_Blog.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+All
+\begin_inset space ~
+\end_inset
+
+Parts:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/ML%20Guide%20Links"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Python
+\begin_inset space ~
+\end_inset
+
+Script
+\begin_inset space ~
+\end_inset
+
+(Main):
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "KagglC1.py"
+target "https://github.com/ynaghibi/BlogsResources/blob/main/KagglC1.py"
+literal "false"
+
+\end_inset
+
+ (save this in the same folder as the supplement script and the csv files from Kaggle before you run it)
+\end_layout
+
+\begin_layout Description
+Python
+\begin_inset space ~
+\end_inset
+
+Script
+\begin_inset space ~
+\end_inset
+
+(Supplement) 
+\begin_inset CommandInset href
+LatexCommand href
+name "KagglDataC1.py"
+target "https://github.com/ynaghibi/BlogsResources/blob/main/KagglDataC1.py"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Kaggle:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "House Prices - Advanced Regression Techniques"
+target "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/submissions"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Last
+\begin_inset space ~
+\end_inset
+
+Edit:
+ 2025 April 03
+\end_layout
+
+\begin_layout Description
+Credits:
+ This guide is inspired by chapter 2 in "
+\shape italic
+Hands on Machine Learning
+\shape default
+" by Aurélien Geron 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HoML"
+literal "false"
+
+\end_inset
+
+.
+ I am in no way associated with the author himself.
+ This guide does not replicate any parts of the book,
+ and the code presented here is based on publicly available source codes (see Colab).
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+First
+\begin_inset space ~
+\end_inset
+
+published
+\begin_inset space ~
+\end_inset
+
+on
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Big project
+\end_layout
+
+\begin_layout Standard
+Compared to the previous small project the learning curve will be steeper here,
+ but you will also learn a lot more.
+\end_layout
+
+\begin_layout Standard
+Just like we did in the 
+\series bold
+First Steps
+\series default
+ section,
+ we need to import the basic modules and load the data.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import numpy as np
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import pandas as pd
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from IPython.display import display
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from pathlib import Path
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+sLocal_Folder_Path = Path(__file__).parent.resolve()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+train_file_path = sLocal_Folder_Path / "train.csv" # Uses OS-appropriate separator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+predict_file_path = sLocal_Folder_Path / "test.csv"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing = pd.read_csv(train_file_path)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_unknown = pd.read_csv(predict_file_path)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell (repetition)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+One way to get a grasp on large datasets is to plot the 
+\series bold
+histogram
+\series default
+ of all numerical features.
+ The numerical values are grouped together in 
+\series bold
+bins
+\series default
+ that are arranged along the x-axis.
+ The bar length along the y-axis shows how many samples occured in each bin.
+ The following code plots the histograms of each feature next to each other.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing.hist(bins=50,
+ figsize=(30,25))
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+When looking at histograms,
+ it is often important to find heavy-tailed distributions (e.g.,
+ the left plot below).
+ These distributions are asymmetrical in the sense that most of the values are amassed on one side of the x-axis,
+ while the other side is "stretched thin" on the other side.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/heavytail example.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Heavy-tailed vs.
+ normal distribution (generated with deepseek)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Heavy-tailed distributions can be usually converted to bell-shaped normal distribution by calculating the logarithm of the numerical values (on the x-axis).
+ Many regressors can handle normal distributions much better.
+ 
+\end_layout
+
+\begin_layout Standard
+For now we will not worry about transforming the dataset.
+ Instead,
+ we collect all heavy-tailed feature labels in the 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ dataset,
+ and list them in 
+\series bold
+\size footnotesize
+heavy_tailed_features
+\series default
+\size default
+ for later use.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+heavy_tailed_features = ["LotFrontage",
+ "LotArea",
+ "1stFlrSF",
+ "TotalBsmtSF",
+ "GrLivArea"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing[heavy_tailed_features].hist(bins=50,
+ figsize=(12,8))
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The output of this cell shows us the heavy-tailed features only.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/Housing heavy tailed.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Heavy-tailed vs.
+ normal distribution
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Besides the numerical features we have to deal with categorical ones as well.
+ Fortunately,
+ there is a file 
+\series bold
+data_description.txt
+\series default
+ from the zip-file we downloaded from Kaggle.
+ If you open it in a text-editor,
+ you can see a description of all features like e.g.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+ExterQual:
+ Evaluates the quality of the material on the exterior 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       Ex	Excellent
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       Gd	Good
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       TA	Average/Typical
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       Fa	Fair
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       Po	Poor
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Snippet from data_description.txt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Thanks to this description we can try to convert the feature labeled as 
+\series bold
+\size footnotesize
+ExterQual
+\series default
+\size default
+ into a numerical one.
+ It may seem curious at first,
+ but since evaluations like 
+\series bold
+\size footnotesize
+Excellent
+\series default
+\size default
+ or 
+\series bold
+\size footnotesize
+Poor
+\series default
+\size default
+ are based on human estimations,
+ it makes sense to transform them into fibonnaci-numbers rather than linearly increasing ones.
+\end_layout
+
+\begin_layout Standard
+The reason behind this is that the difference between two adjacent numbers in a fibonnaci sequence is increasing based on the previous number in the sequence.
+ Otherwise humans would have a harder time to distinguish between them (for more details see e.g.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Scrum"
+literal "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+As a further justification for this approach,
+ we will see that the numerical value of 
+\series bold
+\size footnotesize
+ExterQual
+\series default
+\size default
+ is quite important for predicting the sales price targets.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course there are also features,
+ where it does not make much sense converting them to any number like e.g.
+ the type of the roof material.
+ For now we will keep them as categorical values (i.e.
+ strings).
+ 
+\end_layout
+
+\begin_layout Standard
+For our feature-to-number-mapping we can use dictionaries in Python.
+ Since putting all feature-mapping dictionaries in one .py file would clutter the code,
+ we store them in a file 
+\series bold
+KagglDataC1.py
+\series default
+ instead,
+ and put this file in the same folder as our main Python script.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# ExterQual:
+ Evaluates the quality of the material on the exterior 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+fibonacci_mapping_ExterQual = {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+	"Po":
+ 1,
+    # Poor
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+   "Fa":
+ 2,
+  # Fair
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+   "TA":
+ 3,
+  # Average/Typical
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+   "Gd":
+ 5,
+ # Good
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+   "Ex":
+ 8,
+ # Excellent
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Snippet from KagglDataC1.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The complete file can be found on my Github page (see 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "KagglData.py"
+literal "false"
+
+\end_inset
+
+),
+ but you can also create it yourself.
+ Now we can go back to our main Python file,
+ and add the following cell.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from KagglDataC1 import *
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+ranked_category_columns
+\family default
+\series default
+ = ["BsmtQual",
+ "BsmtCond",
+ "BsmtExposure",
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "BsmtFinType1",
+ "BsmtFinType2",
+ "HeatingQC",
+ "KitchenQual",
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "Functional",
+ "FireplaceQu",
+ "GarageFinish",
+ "GarageQual",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "GarageCond",
+ "PavedDrive",
+ "PoolQC",
+ "Fence",
+ "ExterCond",
+ "ExterQual"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+]
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def transform_categories_to_ranked(data):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    for col in 
+\family sans
+\series bold
+ranked_category_columns
+\family default
+\series default
+:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        data[f"Ranked_{col}"] = data[col].map(globals()[f"fibonacci_mapping_{col}"])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    data = data.drop(columns=
+\family sans
+\series bold
+ranked_category_columns
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return data
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing = transform_categories_to_ranked(housing)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_unknown = transform_categories_to_ranked(housing_unknown)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+This imports the contents of our KagglDataC1.py file,
+ automatically converts features like 
+\series bold
+\size footnotesize
+ExterQual
+\series default
+\size default
+ to a numerical value,
+ adds them as new features in the dataframes 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+housing_unknown
+\series default
+\size default
+,
+ and deletes the columns of the original non-numerical features.
+ In addition,
+ we added the prefix "
+\series bold
+\size footnotesize
+Ranked_
+\series default
+\size default
+" to the new features in order to distinguish them from other features.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course we should check,
+ whether the modified housing dataframes are correct.
+ One way to do that is to run 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(housing_unknown.info())
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(housing.info())
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+with the 
+\series bold
+\size footnotesize
+.info()
+\series default
+\size default
+ method.
+ It shows a list of all features labels from each column together with their data type and the amount of samples that have this feature.
+ E.g.
+ 
+\series bold
+\size footnotesize
+int64
+\series default
+ 
+\size default
+stands for integers,
+ 
+\series bold
+\size footnotesize
+float64
+\series default
+ 
+\size default
+for float values,
+ whereas 
+\series bold
+\size footnotesize
+object
+\series default
+\size default
+ indicates a non-numerical or mixed feature type.
+\end_layout
+
+\begin_layout Standard
+If the output of 
+\series bold
+\size footnotesize
+.info()
+\series default
+\size default
+ is too large,
+ you can maximize the whole list by clicking on "
+\series bold
+scrollable element
+\series default
+" in Visual Code.
+ If everything went fine,
+ then it should look like this.
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/visual code screen housing info.jpg
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visual Code showing housing info
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If there is no option to show the complete output,
+ then it is probably because there are too many columns/features in your dataset.
+ Fortunately you can fix this by changing the settings with a code like 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+pd.set_option('display.max_info_columns',
+ 250)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+pd.set_option('display.max_rows',
+ 250)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+For the output of 
+\series bold
+\size footnotesize
+.info()
+\series default
+\size default
+ the setting 
+\series bold
+\size footnotesize
+max_info_columns
+\series default
+\size default
+ is enough,
+ but we also want to set 
+\series bold
+\size footnotesize
+max_rows
+\series default
+\size default
+ for other outputs as well (e.g.
+ when we display the correlation matrix later on).
+\end_layout
+
+\begin_layout Standard
+Another way of looking at the housing dataset is to run 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing.describe()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+which will show you information like the mean-value or the minimum/maximum values of all numerical features in the 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ dataframe.
+ 
+\end_layout
+
+\begin_layout Standard
+The set of numerical features can be further divided in continuous and discrete ones.
+ The discrete features are the ones,
+ where the set of all possible values small or very limited.
+ E.g.
+ the housing feature 
+\series bold
+\size footnotesize
+OverallQual
+\series default
+\size default
+ can have integer values from 1 to 10 only.
+ For discrete features,
+ we can therefore use 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+(housing["OverallQual"]).value_counts().sort_index()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+which results in the output
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+OverallQual
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+1       2
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+2       3
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+3      20
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+4     116
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+5     397
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+6     374
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+7     319
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+8     168
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+9      43
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+10     18
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+Name:
+ count,
+ dtype:
+ int64
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As you can see there are only 2 houses with a terrible 
+\series bold
+\size footnotesize
+OverallQual
+\series default
+\size default
+ of 1.
+ Now is a good time to use these methods to explore some of the other features on your own before moving on.
+ Maybe you can find some interesting observations.
+ E.g.
+ you may want to look at how many kitchen or other types of rooms the house samples have.
+\end_layout
+
+\begin_layout Standard
+Later on we will modify the housing dataset for temporary purposes (e.g.
+ stratified samples),
+ which is why we should keep a copy of the current housing dataset.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_original = housing.copy()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now we should look at the so called 
+\series bold
+standard correlation coefficients
+\series default
+ between each feature.
+ In short,
+ the correlation measures the linear dependency between two features.
+ The correlation is close to +1 or -1,
+ if there is a strong positive or negative linear relationship between two features.
+ 
+\end_layout
+
+\begin_layout Standard
+If a more complex dependency exists,
+ or if there is no dependency at all,
+ then the correlation should be close to 0.
+ Of course it can be possbile to transform non-linear dependencies into linear ones before measuring the correlations,
+ but this topic is not part of our current project.
+\end_layout
+
+\begin_layout Standard
+These correlation coefficients are conveniently stored in a so called 
+\series bold
+correlation matrix
+\series default
+.
+ Since we are very much interested in the correlation of the target sale price and every other feature,
+ we only have to look up the 
+\series bold
+\size footnotesize
+SalePrice
+\series default
+\size default
+ column of the correlation matrix.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+corr_matrix = housing.
+\family sans
+\series bold
+corr
+\family default
+\series default
+(numeric_only = True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+corr_matrix["SalePrice"].sort_values(ascending = False)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If you run this cell,
+ you should get a list of the correlations of each feature with respect to the targets.
+ It should not surprise you that 
+\series bold
+\size footnotesize
+SalePrice
+\series default
+\size default
+ has a correlation of 1.0 with itself.
+ 
+\end_layout
+
+\begin_layout Standard
+More interesting examples are 
+\series bold
+\size footnotesize
+OverallQual
+\series default
+\size default
+,
+ which has a high correlation of 0.79.
+ There are also features we derived from the fibonnaci-numbers with a relatively high correlation (e.g.
+ 
+\series bold
+\size footnotesize
+Ranked_ExterQual
+\series default
+\size default
+ has 0.69 and 
+\series bold
+\size footnotesize
+Ranked_KitchenQual
+\series default
+\size default
+ has 0.68).
+ 
+\end_layout
+
+\begin_layout Standard
+If the absolute value of the correlation between a feature and the target is high,
+ then it is a good indicator that it may be important for prediction models.
+ The advantage of this method is that is quite easy to find those features.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course it may be also possible that we miss some of the other important features,
+ if their correlation is close to 0.
+ In those cases we would need a more sophisticated analysis.
+\end_layout
+
+\begin_layout Subsubsection
+Creating new features
+\end_layout
+
+\begin_layout Standard
+Based on the old features,
+ we want to create new features that are more meaningful for predict the targets.
+ This requires educated guesses that are tailored to the concrete problem (in this case the house dataset).
+ Here are some thoughts:
+ 
+\end_layout
+
+\begin_layout Itemize
+There are features in the housing dataset,
+ which count the amount of full bathrooms 
+\series bold
+\size footnotesize
+FullBath
+\series default
+\size default
+ (including a shower) and 
+\series bold
+\size footnotesize
+HalfBath
+\series default
+\size default
+ (i.e.
+ toilets only) separately.
+ Furthermore,
+ these numbers do not take into account the baths in the basement (
+\series bold
+\size footnotesize
+BsmtFullBath
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+BsmtHalfBath
+\series default
+\size default
+).
+ By computing the sum of these four features,
+ we get a more meaningful number of the total amount of bathrooms.
+\end_layout
+
+\begin_layout Itemize
+The total area 
+\series bold
+\size footnotesize
+GrLivArea
+\series default
+\size default
+ of living space (basement not included) is already an important feature,
+ but if we multiply it with 
+\series bold
+\size footnotesize
+OverallQual
+\series default
+\size default
+ we may get an even more meaningful one.
+\end_layout
+
+\begin_layout Itemize
+The fibonnaci-ranked features 
+\series bold
+\size footnotesize
+Ranked_PavedDrive
+\series default
+\size default
+,
+ 
+\series bold
+\size footnotesize
+GarageFinish
+\series default
+\size default
+,
+ 
+\series bold
+\size footnotesize
+Ranked_GarageQual
+\series default
+\size default
+,
+ 
+\series bold
+\size footnotesize
+GarageCars
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+GarageArea
+\series default
+\size default
+ are probably related to each other such that it can make sense to calculate their product.
+ 
+\end_layout
+
+\begin_layout Itemize
+The same is probably true for the quality of the heating 
+\series bold
+\size footnotesize
+Ranked_HeatingQC
+\series default
+\size default
+ and the total amount of rooms 
+\series bold
+\size footnotesize
+TotRmsAbvGrd
+\series default
+\size default
+ (basement not included).
+\end_layout
+
+\begin_layout Itemize
+Ratios like the amount of bedrooms per living area,
+ or the amount of bathrooms per bedrooms can also lead to important new features.
+\end_layout
+
+\begin_layout Standard
+We can translate these ideas to the code below.
+ Note that when we compute the ratios,
+ we have to be careful not to divide by 0.
+ In our example we solve this problem by checking whether the feature of a given sample is 0,
+ and then provide an alternative feature that is guaranteed to have a different value than 0.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["bath_sum"] = 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing["FullBath"] + housing["HalfBath"] 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    + housing["BsmtFullBath"] + housing["BsmtHalfBath"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["areaquality_product"] = housing["GrLivArea"] * housing["OverallQual"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["garage_product"] = housing["Ranked_PavedDrive"] 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    * housing["Ranked_GarageFinish"] * housing["Ranked_GarageQual"] 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    * housing["GarageCars"] * housing["GarageArea"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["bedrooms_ratio"] = housing["BedroomAbvGr"] / housing["GrLivArea"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["roomquality_product"] = housing["Ranked_HeatingQC"] 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    * housing["TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["bath_kitchen_ratio"] = 
+\family sans
+\series bold
+np.where
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing["KitchenAbvGr"] != 0,
+  # Condition
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    (housing["bath_sum"]) / housing["KitchenAbvGr"],
+  # True:
+ Perform division
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    (housing["bath_sum"]) / housing["TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing["bath_bedroom_ratio"] = np.where(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing["BedroomAbvGr"] != 0,
+  # Condition
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    (housing["bath_sum"]) / housing["BedroomAbvGr"],
+  # True:
+ Perform division
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    (housing["bath_sum"]) / housing["TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Afterwards we can quickly check how the correlations of the new features look like compared to the old ones.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+corr_matrix = housing.corr(numeric_only = True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+corr_matrix["SalePrice"].sort_values(ascending = False)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The new output tells us e.g.
+ that 
+\series bold
+\size footnotesize
+areaquality_product
+\series default
+\size default
+ has the highest correlation of any other feature,
+ which is already an improvement.
+ We can also see that 
+\series bold
+\size footnotesize
+garage_product
+\series default
+\size default
+ has a significantly higher correlation than any of its factors.
+ 
+\end_layout
+
+\begin_layout Standard
+We could go further by dropping the old features after replacing them with better ones,
+ or use advanced techniques like the principal component analysis (PCA),
+ but for the sake of keeping this guide simple we will leave the old and new features as they are right now.
+ 
+\end_layout
+
+\begin_layout Standard
+If we do not want to rely too much on the correlation coefficients,
+ we can also use the so called 
+\series bold
+scatter matrix
+\series default
+,
+ where each feature is plotted against each other.
+ This can help to find out non-linear dependencies or clusters.
+ Of course we can also find non-existing dependencies,
+ if the plotted points are mostly aligned around a vertical or horizontal line the plot.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that plotting a feature against itself does not result in any interesting plot,
+ which is why they are replaced by their corresponding histogram.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from pandas.plotting import scatter_matrix
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+attributes = ["SalePrice",
+ "garage_product",
+ "areaquality_product",
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "roomquality_product",
+ "bedrooms_ratio",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+scatter_matrix(housing[attributes],
+ figsize=(10,
+ 10))
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As a result we obtain the following plot.
+ It shows e.g.
+ how our bedrooms ratio has a non-linear dependency with other features like the sale price.
+ 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename images/ScatterMatrix.png
+	lyxscale 40
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Scatter matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Strata
+\end_layout
+
+\begin_layout Standard
+Like we have done in our small project we need to split the dataset into train and test sets,
+ but this time we do no want to do this randomly.
+ Instead we want them to be split as evenly as possibly accross certain groups of samples that are called 
+\series bold
+stratas
+\series default
+.
+ This makes sure that certain stratas are not over- or underrepresented.
+ 
+\end_layout
+
+\begin_layout Standard
+E.g.
+ if we want to predict the performance of a new drug,
+ then we want to represent the ages of all patients as evenly as possible.
+ Of course we would have to group different ages together,
+ i.e.
+ we could divide the ages into different bins for the ages 0-10,
+ 10-20,
+ 30-40,
+ etc.
+ 
+\end_layout
+
+\begin_layout Standard
+This method is called 
+\series bold
+stratified sampling
+\series default
+.
+ In our case we have to make an educated guess to find good strata for predicting house prices.
+ E.g.
+ we could use the 
+\series bold
+\size footnotesize
+areaquality_product
+\series default
+\size default
+ and the 
+\series bold
+\size footnotesize
+bedrooms_ratio
+\series default
+\size default
+ as stratas.
+ For this purpose we use the function 
+\series bold
+\size footnotesize
+pd.cut
+\series default
+\size default
+,
+ where the 
+\series bold
+\size footnotesize
+bins
+\series default
+\size default
+ define the boundaries of each strata.
+ The stratas can also be named with the function argument 
+\series bold
+\size footnotesize
+labels
+\series default
+\size default
+.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%strata_cat_1 = 
+\family sans
+\series bold
+pd.cut
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing["areaquality_product"],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    bins = [0,
+ 5e3,
+ 8e3,
+ 12e3,
+ np.inf],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    labels = [1,2,3,4],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+include_lowest
+\family default
+\series default
+ = True
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+strata_cat_2 = 
+\family sans
+\series bold
+pd.cut
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing["bedrooms_ratio"],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    bins = [0.0,
+ 16e-4,
+ 21e-4,
+ np.inf],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    labels = [1,2,3],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+include_lowest
+\family default
+\series default
+ = True
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+) strata_cat_2 (otherwise outcomment this line)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+strata_cat_1.value_counts().sort_index().plot.bar(grid = True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+strata_cat_2.value_counts().sort_index().plot.bar(grid = True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+It is noteworthy that argument 
+\series bold
+\size footnotesize
+include_lowest
+\series default
+\size default
+ prevents the case,
+ where values at the edges of a bin are not included,
+ i.e.
+ transformed into 
+\series bold
+\size footnotesize
+NaN
+\series default
+\size default
+ (not any number).
+ E.g.
+ if the 
+\series bold
+\size footnotesize
+bedrooms_ratio
+\series default
+\size default
+ is 0 for a given sample,
+ then 
+\series bold
+\size footnotesize
+pd.cut
+\series default
+\size default
+ would convert it into 
+\series bold
+\size footnotesize
+NaN
+\series default
+\size default
+,
+ because the 
+\series bold
+\size footnotesize
+bins
+\series default
+\size default
+ start 0.
+ 
+\end_layout
+
+\begin_layout Standard
+The resulting plots show us the histograms for both strata features.
+ If we want to make sure that 
+\series bold
+\size footnotesize
+pd.cut
+\series default
+\size default
+ did not create any 
+\series bold
+\size footnotesize
+NaN
+\series default
+\size default
+ values,
+ we can check this with the following code.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+has_nan = strata_cat_2.isna().any().any()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+print("Does the DataFrame contain NaN values?",
+ has_nan)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+One problem we have not addressed,
+ yet,
+ is that we can split the housing dataset only with respect to one feature.
+ If we wanted to combine two features,
+ then we would have to use the following trick.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+sStrataCat = "Strata_Cat"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing[sStrataCat] = strata_cat_1.astype(str) + "_" + strata_cat_2.astype(str)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing[sStrataCat].value_counts().sort_index().plot.bar(grid = True)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here we simply concatenate the strings of the labels of each strata feature,
+ which serve as labels for the combined stata feature.
+ The only problem is that some of the combined stratas have very view samples,
+ which could lead to distortions in our prediction model or even to runtime errors.
+\end_layout
+
+\begin_layout Standard
+We can avoid this by simply putting all underrepresented strata in a new stratum with the label 
+\series bold
+\size footnotesize
+"Other"
+\series default
+\size default
+.
+ In the code below the integer 
+\series bold
+\size footnotesize
+iMinCounts
+\series default
+\size default
+ defines the minimum amount of samples each strata needs to have without being merged with the 
+\series bold
+\size footnotesize
+Other
+\series default
+\size default
+ stratum.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+iMinCounts = 100
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_stratacat_counts = housing[sStrataCat].value_counts()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+indices_of_small_housing_stratacat_counts = housing_stratacat_counts[
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing_stratacat_counts < iMinCounts
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+].index
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing[sStrataCat] = housing[sStrataCat].
+\family sans
+\series bold
+apply
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    lambda x:
+ 'Other' if x in indices_of_small_housing_stratacat_counts else x
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing[sStrataCat].value_counts().sort_index().plot.bar(grid = True)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+plt.show()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here 
+\series bold
+\size footnotesize
+.apply
+\series default
+\size default
+ returns a copy of the original series 
+\series bold
+\size footnotesize
+housing[sStrataCat] 
+\series default
+\size default
+,
+ in which each value 
+\series bold
+\size footnotesize
+x
+\series default
+\size default
+ is replaced by the return value of the lamda function.
+ The resulting histogram looks much better now,
+ after the small strata have vanished.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we that we have obtained the desired strata,
+ we can finally split the data with the 
+\series bold
+\size footnotesize
+stratify
+\series default
+\size default
+ argument.
+ Since we will not need the strata category afterwards,
+ we can revert the housing dataset back to its original form before applying the split.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.model_selection import train_test_split
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_strata_category = housing[sStrataCat].copy()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing = housing_original
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+strat_train_set,
+ strat_test_set = 
+\family sans
+\series bold
+train_test_split
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing,
+ test_size = 0.15,
+ 
+\family sans
+\series bold
+stratify
+\family default
+\series default
+ = housing_strata_category,
+ random_state = 42
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing = strat_train_set.drop("SalePrice",
+ axis=1)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_targets = strat_train_set["SalePrice"].copy()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Pipelines
+\end_layout
+
+\begin_layout Standard
+Next we import the required pipeline modules that we will be using.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.impute import SimpleImputer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.preprocessing import StandardScaler
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.preprocessing import OneHotEncoder
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.pipeline import make_pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.compose import ColumnTransformer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.compose import make_column_selector
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.preprocessing import FunctionTransformer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.pipeline import Pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.base import BaseEstimator,
+ TransformerMixin
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The last imports will be useful for implementing our own transformers,
+ and thus create custom hyperparameters.
+ For this purpose it is helpful to define a list of the column features we want to transform,
+ and an inverted version of this list in form of a dictionary.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+list_trafo_columns
+\family default
+\series default
+ = [
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "FullBath",
+ "HalfBath",
+ "BsmtFullBath",
+ "BsmtHalfBath",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "GrLivArea",
+ "OverallQual",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "Ranked_PavedDrive",
+ "Ranked_GarageFinish",
+ "Ranked_GarageQual",
+ "GarageCars",
+ "GarageArea",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "BedroomAbvGr",
+ "GrLivArea",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "Ranked_HeatingQC",
+ "GrLivArea",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    "KitchenAbvGr",
+ "BedroomAbvGr",
+ "TotRmsAbvGrd",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+]
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+inverse_list_trafo_columns
+\family default
+\series default
+ = {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    value:
+ index for index,
+ value in enumerate(list_trafo_columns)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+} 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In this project our custom transformer 
+\series bold
+\size footnotesize
+ColumnFormulaTransformer
+\series default
+\size default
+ should have the following properties.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ability to calculate ratios,
+ where the numerator can be a sum or product of features.
+ The denominator can be a column,
+ where some values may be 0.
+ In this case we need to be able to provide an alternative column for the denominator,
+ where the values are guaranteed to be 
+\begin_inset Formula $\neq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+We want to make sure the the first terms or factors in the numerator are the most important ones,
+ while the less important ones can be omitted depending on which value the hyperparameter 
+\series bold
+\size footnotesize
+iTermCutoff
+\series default
+\size default
+ has.
+ The important part here is that we will see how to implement hyperparameters in custom transformers,
+ even though we will also see that it may not always be a good idea to engineer too many hyperparameters.
+ 
+\end_layout
+
+\begin_layout Itemize
+For best practice reasons the 
+\series bold
+\size footnotesize
+fit
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+transform
+\series default
+\size default
+ methods should make sure that the number of features is consistent (see 
+\series bold
+\size footnotesize
+X.shape[1]
+\series default
+\size default
+ further below).
+\end_layout
+
+\begin_layout Itemize
+The transformer should have a 
+\series bold
+\size footnotesize
+get_feature_names_out
+\series default
+\size default
+ method.
+ As we will see this controls how the lables of new features are named.
+ In our case it will simply concatenate the prefix 
+\series bold
+\size footnotesize
+"formula" 
+\series default
+\size default
+with 
+\series bold
+\size footnotesize
+"__"
+\series default
+\size default
+ and the corresponding transformer name.
+\end_layout
+
+\begin_layout Itemize
+For compatibility reasons the 
+\series bold
+\size footnotesize
+fit
+\series default
+\size default
+ method should return 
+\series bold
+\size footnotesize
+self
+\series default
+\size default
+ and have an input argument called 
+\series bold
+\size footnotesize
+y
+\series default
+\size default
+,
+ even if we will not use it.
+\end_layout
+
+\begin_layout Itemize
+The transformer class should be derived from the 
+\series bold
+\size footnotesize
+TransformerMixin
+\series default
+\size default
+ class,
+ which will create the 
+\series bold
+\size footnotesize
+fit_transform
+\series default
+\size default
+ automatically.
+ We will only have to implement 
+\series bold
+\size footnotesize
+fit
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+transform
+\series default
+\size default
+ ourselves.
+ 
+\end_layout
+
+\begin_layout Itemize
+It should be also derived from 
+\series bold
+\size footnotesize
+BaseEstimator
+\series default
+\size default
+,
+ if we want to use automatic hyperparameter tuning.
+ The tuning process must have access to the arguments of the class initializer method 
+\series bold
+\size footnotesize
+__init__
+\series default
+\size default
+.
+ This is usually already the case as long as 
+\series bold
+\size footnotesize
+__init__
+\series default
+ 
+\size default
+does not include special Python syntax like 
+\series bold
+\size footnotesize
+*args
+\series default
+ 
+\size default
+and
+\size footnotesize
+ 
+\series bold
+**kwargs
+\series default
+\size default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We can achieve this with the following implementation.
+ It may appear a bit overwhelming at first,
+ but the previous explanations should make it clear.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+class 
+\family sans
+\series bold
+ColumnFormulaTransformer
+\family default
+\series default
+(BaseEstimator,
+ TransformerMixin):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    def 
+\family sans
+\series bold
+__init__
+\family default
+\series default
+(self,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            sum = [],
+ product = [],
+ denominator = [],
+ altdenominator = [],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            iTermCutoff = np.inf
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.sum = sum
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.product = product
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.denominator = denominator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.altdenominator = altdenominator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.iTermCutoff = iTermCutoff
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    def 
+\family sans
+\series bold
+fit
+\family default
+\series default
+(self,
+ X,
+ y=None):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        self.n_features_in_ = X.shape[1]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        return self
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    def 
+\family sans
+\series bold
+transform
+\family default
+\series default
+(self,
+ X):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        assert self.n_features_in_ == X.shape[1]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        #calculate nominator:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        numerator = np.zeros(X.shape[0])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        for id,
+ col in enumerate(self.sum):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            if id >= self.iTermCutoff:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                break
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            numerator += X[:,inverse_list_trafo_columns[col]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        if self.product:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            prodnumerator = np.ones(X.shape[0])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            for id,
+ col in enumerate(self.product):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                if id >= self.iTermCutoff:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                    break
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                prodnumerator *= X[:,inverse_list_trafo_columns[col]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            numerator += prodnumerator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        #calculate denominator:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        if self.denominator:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            denominator = X[:,
+ inverse_list_trafo_columns[self.denominator[0]]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            if self.altdenominator:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                altdenominator = 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                    X[:,
+ inverse_list_trafo_columns[self.altdenominator[0]]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                denominator[denominator == 0] = altdenominator[denominator == 0]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            result = numerator / denominator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        else:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            result = numerator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        return result.reshape(-1,
+ 1) #convert result from 1D to 2D NumPy array
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    def 
+\family sans
+\series bold
+get_feature_names_out
+\family default
+\series default
+(self,
+ names=None):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        return ["formula"]
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Next we want to include this transformer in pipelines that first apply 
+\series bold
+\size footnotesize
+SimpleImputer
+\series default
+\size default
+,
+ then our custom transformer and finally 
+\series bold
+\size footnotesize
+StandardScaler
+\series default
+\size default
+.
+ Since we will need several of these pipelines (and since the internal parameters of those pipelines should not be mixed with each other),
+ we want to implement a function that can create new instances of our desired pipeline design.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        sum = [],
+ product = [],
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        denominator = [],
+ altdenominator = [],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        iTermCutoff = np.inf
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return Pipeline([
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ("imputer",
+ 
+\family sans
+\series bold
+SimpleImputer
+\family default
+\series default
+(strategy="median")),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        (
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            "colformula",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            
+\family sans
+\series bold
+ColumnFormulaTransformer
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                sum = sum,
+ product = product,
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                denominator = denominator,
+ altdenominator = altdenominator,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                iTermCutoff = iTermCutoff
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            )
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ("scaler",
+ 
+\family sans
+\series bold
+StandardScaler
+\family default
+\series default
+())
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Since we will be using column transformers as well,
+ it is very convenient to arrange the required 3-tuples in 
+\series bold
+\size footnotesize
+ColumnTransformer_TupleList
+\series default
+\size default
+.
+ As you will see later,
+ this list reflects our previous ideas for creating new features like e.g.
+ the bedroom ratio.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+bathsum_list = ["FullBath",
+ "HalfBath",
+ "BsmtFullBath",
+ "BsmtHalfBath"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+ColumnTransformer_TupleList
+\family default
+\series default
+ = [
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("bath",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            sum = bathsum_list
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("areaquality",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            product = ["GrLivArea",
+ "OverallQual"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("garage",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            product = ["GarageCars",
+ "GarageArea",
+ "Ranked_GarageFinish",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+                "Ranked_GarageQual",
+ "Ranked_GarageCond",
+ "Ranked_PavedDrive",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            ]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("bedroom",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            product = ["BedroomAbvGr"],
+ denominator = ["GrLivArea"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("roomquality",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            product = ["Ranked_HeatingQC",
+ "TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("bath_kitchen",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            sum = bathsum_list,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            denominator = ["KitchenAbvGr"],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            altdenominator = ["TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("bath_bedroom",
+ make_pipeline_with_formula(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            sum = bathsum_list,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            denominator = ["BedroomAbvGr"],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+            altdenominator = ["TotRmsAbvGrd"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ),
+ list_trafo_columns
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+]
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+We also have to set up simple pipelines like e.g.
+ log-transformations for heavy-tailed features.
+ One important transformation that we have not discussed,
+ yet,
+ is 
+\series bold
+\size footnotesize
+OneHotEncoder
+\series default
+\size default
+.
+ It transforms categorical features to numbers,
+ which can then be used by regressors.
+ The important part is that it makes sure each categorical value gets its own feature.
+ 
+\end_layout
+
+\begin_layout Standard
+One of the reason for this is that two categorical values belonging to the same numerical feature would have an order between them (e.g.
+ 5 is greater than 3),
+ even though there may be no sensible order between those categories at all.
+ This would create artificial patterns in the training set.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def safe_log(x):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return np.log(np.where(x <= 0,
+ 1e-10,
+ x))
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+log_pipeline = make_pipeline(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy = "median"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    FunctionTransformer(safe_log,
+ feature_names_out = "one-to-one"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    StandardScaler()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+cat_pipeline = make_pipeline(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy="most_frequent"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+OneHotEncoder
+\family default
+\series default
+(handle_unknown="ignore")
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+default_num_pipeline = make_pipeline(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy = "median"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    StandardScaler()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+ColumnTransformer_TupleList
+\family default
+\series default
+.extend([
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("log",
+ log_pipeline,
+ heavy_tailed_features),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("cat",
+ cat_pipeline,
+ make_column_selector(dtype_include = object)),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+preprocessing = 
+\family sans
+\series bold
+ColumnTransformer
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ColumnTransformer_TupleList,
+ remainder = default_num_pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Prediction models
+\end_layout
+
+\begin_layout Standard
+Instead of a linear regressor we will be using a so called random forest regressor,
+ although for now you do not have to understand how it works.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.ensemble import RandomForestRegressor
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from scipy.stats import uniform,
+ randint
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+full_pipeline = Pipeline([
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("preprocessing",
+ preprocessing),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ("random_forest",
+ 
+\family sans
+\series bold
+RandomForestRegressor
+\family default
+\series default
+(random_state=42)),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The hyperparameter tuning can be done in different ways.
+ We chose 
+\series bold
+\size footnotesize
+RandomizedSearchCV
+\series default
+\size default
+ for this purpose,
+ because it allows us to tune many different configurations without trying out all of them.
+ This means the results will be computed in a significantly shorter time.
+\end_layout
+
+\begin_layout Standard
+In the code below we can see how the transformer names and the function argument names are used to define which hyperparameters are changed in the end.
+ Their names are separated by "
+\size footnotesize
+__
+\size default
+".
+ Of course the order of these names play a role,
+ because they reflect the nested structures in which the hyperparameters can be found.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.model_selection import RandomizedSearchCV
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+param_distribs = {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    '
+\family sans
+\series bold
+preprocessing__garage__colformula__iTermCutoff
+\family default
+\series default
+':
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        RandomTermCuttof(2,6),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    '
+\family sans
+\series bold
+preprocessing__bath__colformula__iTermCutoff
+\family default
+\series default
+':
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        RandomTermCuttof(1,4),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    '
+\family sans
+\series bold
+preprocessing__bath_kitchen__colformula__iTermCutoff
+\family default
+\series default
+':
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        RandomTermCuttof(1,4),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    '
+\family sans
+\series bold
+preprocessing__bath_bedroom__colformula__iTermCutoff
+\family default
+\series default
+':
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        RandomTermCuttof(1,4),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+rnd_search = 
+\family sans
+\series bold
+RandomizedSearchCV
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    full_pipeline,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    param_distributions = param_distribs,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    n_iter=30,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+cv=5
+\family default
+\series default
+,
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    scoring='neg_root_mean_squared_error',
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    random_state=42,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+return_train_score
+\family default
+\series default
+=True,
+  # Critical for overfitting check
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+rnd_search.fit(housing,
+ housing_targets)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here the argument 
+\series bold
+\size footnotesize
+cv = 5
+\series default
+\size default
+ refers to the number of subdivisions of the training set required for a method called 
+\series bold
+cross validation
+\series default
+.
+ The training set is subdivided in 
+\begin_inset Formula $k$
+\end_inset
+
+ many subsets.
+ Then one of them is used as a test set,
+ and the entirety of the remaining 
+\begin_inset Formula $k-1$
+\end_inset
+
+ subsets is used as train set.
+ This allows us to estimate the overall performance of our prediction model.
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore,
+ 
+\series bold
+\size footnotesize
+return_train_score
+\series default
+\size default
+ helps us to detect possible overfitting issues,
+ because then we can also get the 
+\series bold
+\size footnotesize
+mean_train_score
+\series default
+\size default
+ instead of just the test scores:
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+results = pd.DataFrame(rnd_search.cv_results_)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+results[['params',
+ 'mean_train_score',
+ 'mean_test_score']]
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The output of this cell shows us that 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+id	params	mean_train_score	mean_test_score
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+0
+\family default
+\series default
+	{'preprocessing__bath_	-11654.712929	-29645.010378
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+1
+\family default
+\series default
+	{'preprocessing__bath__colformula__iTermCutoff...	-11736.464726	-30044.265372
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+2
+\family default
+\series default
+	{'preprocessing__bath__colformula__iTermCutoff...	-11586.796143	-29920.220671
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+3
+\family default
+\series default
+	{'preprocessing__bath__colformula__iTermCutoff...	-11638.117710	-29604.245397
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output (snippet)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+the mean train score is systematically much higher than the mean test score (with a difference of approximately 20,000),
+ indicating that our current hyperparameter-tuned model has excessive freedom,
+ leading to overfitting.
+\end_layout
+
+\begin_layout Standard
+We would have to go back and eliminate some of this freedoms.
+ E.g.
+ we could reduce the number of hyperparameters and see whether the performance of the prediction model changes as a result.
+ For the scope of this guide we will not go deeper into this topic,
+ but the key takeaway is that hyperparameters should be carefully engineered.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that we can also examine the 
+\series bold
+\size footnotesize
+mean_test_score
+\series default
+\size default
+ only,
+ if we want to see further details.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+cv_rmse_scores = -rnd_search.cv_results_['mean_test_score']
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+rmse_summary = pd.Series(cv_rmse_scores).describe()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+rmse_summary
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In any way we can now get the prediction model with the best hyperparameters our script has found so far.
+ Our main train set (from the train test split) helps us to estimate the RMSE of its prediction.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.metrics import root_mean_squared_error
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+final_model
+\family default
+\series default
+ = rnd_search.
+\family sans
+\series bold
+best_estimator_
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_predicted_prices = 
+\family sans
+\series bold
+final_model
+\family default
+\series default
+.predict(housing_final_test)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+tree_rmse = root_mean_squared_error(housing_targets_final_test,
+ housing_predicted_prices)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+tree_rmse
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Another way to estimate values like the RMSE are 
+\series bold
+confidence intervals
+\series default
+ that depend on the 
+\series bold
+confidence level
+\series default
+.
+ E.g.
+ if we obtain RMSE = 50,000 ± 3,000,
+ then the confidence interval is spanning from 50,000 - 3,000 to 50,000 + 3,000.
+ 
+\end_layout
+
+\begin_layout Standard
+A confidence level of 95% means that if we constructed these confidence intervals repeatedly in the same way,
+ then 95% of them would contain the true RMSE.
+\end_layout
+
+\begin_layout Standard
+The following code from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Geron Colab"
+literal "false"
+
+\end_inset
+
+ gives us an array storing the upper and lower bound of such a confidence interval for the squared RMSE.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from scipy import stats
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+confidence
+\family default
+\series default
+ = 0.95
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+squared_errors = (housing_predicted_prices - np.array(housing_targets_final_test)) ** 2
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+np.sqrt(stats.t.interval(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        
+\family sans
+\series bold
+confidence
+\family default
+\series default
+,
+ len(squared_errors) - 1,
+ loc=squared_errors.mean(),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        scale=stats.sem(squared_errors)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    )
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Finally,
+ we can use the prediction model to predict the targets (i.e.
+ the sale prices) of the dataset,
+ where the targets are unknown.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_predicted_prices = rnd_search.predict(housing_unknown)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+submission = pd.DataFrame({
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    'Id':
+ housing_unknown['Id'],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    'SalePrice':
+ housing_predicted_prices
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+})
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+submission.to_csv(sLocal_Folder_Path + '/submission.csv',
+ index=False)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In this case the predicted values are saved as a file called 
+\series bold
+\size footnotesize
+submission.csv
+\series default
+\size default
+.
+ This file can then be uploaded on Kaggle,
+ where you can see your test results in form of the root mean squared error.
+ 
+\end_layout
+
+\begin_layout Standard
+If this error is below 0.20,
+ you have decent result for this competition.
+ Below 0.15 is a solid result,
+ and below 0.10 means you are really good.
+ In our case we reach a score of about 0.14.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+TODO
+\series default
+ (low priority):
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Explain that data snooping means look at the test data and accidentally find patterns that cannot be generalized.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+- for checking pipeline methods:
+ hasattr(pipe,
+ 'predict_proba') # Returns True/False
+\end_layout
+
+\begin_layout Plain Layout
+- Column transformer combines all processed columns together,
+ and then decided whether sparse matrices (like e.g.
+ from OneHotEncoder) remain sparse or are converted to dense matrices after combining them with other columns
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+nana
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+# %%
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Acknowledgements and Legal Notes
+\end_layout
+
+\begin_layout Plain Layout
+As already stated in the beginning,
+ this whole guide is based on Aurélien Geron's book "
+\shape italic
+Hands on Machine Learning
+\shape default
+".
+ I have not extracted information from the book itself,
+ but rather reused parts of the code that is already publicly available on Geron's Colab site.
+ This means that I have added my thoughts or left out parts of the book,
+ while refraining from any sort copies.
+ Furthermore,
+ I will never monitize any part of this blog in any form.
+\end_layout
+
+\begin_layout Plain Layout
+This guide is not meant to copy or replace "Hands on Machine Learning" in any shape or form.
+ This guide does not contain any passages that have been extracted directly from the book.
+ Instead it is just my own analysis and summary of the original content of the book with some additional information provided by me.
+\end_layout
+
+\begin_layout Plain Layout
+There is no association between me and the author.
+\end_layout
+
+\begin_layout Plain Layout
+Furthermore,
+ parts of the codes presented here have been generated by deepseek,
+ and verified by me.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+The code demonstrated in this guide have been partly engineered by me and deepseek,
+ but quite a lot of it is originally based on Geron's code that is also publicly available on his Colab site,
+ which means this guide should not violate any copyright.
+ Besides,
+ I have refrained from copying the not publicly available content from his book,
+ but rather summarized and analyzed it myself for the purpose of an easier to understand crash course.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Kaggle Housing"
+key "Kaggle Housing Competition"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "House Prices - Advanced Regression Techniques"
+target "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/submissions"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "AnacondaInstall"
+key "Install Anaconda"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://github.com/ageron/handson-ml3/blob/main/INSTALL.md"
+target "https://github.com/ageron/handson-ml3/blob/main/INSTALL.md"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "GeronColab"
+key "Geron Colab"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://colab.research.google.com/github/ageron/handson-ml3/blob/main/index.ipynb#scrollTo=-KAqK1NXk8Eu"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "KagglData.py"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/KagglDataC1.py"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "HoML"
+key "HoML"
+literal "false"
+
+\end_inset
+
+Aurélien Géron (2019).
+ 
+\shape italic
+Hands-On Machine Learning with Scikit-Learn,
+ Keras,
+ and Tensorflow:
+ Concepts,
+ Tools,
+ and Techniques to Build Intelligent Systems
+\shape default
+.
+ O'Reilly Media
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "VanderPlas"
+key "VanderPlas"
+literal "false"
+
+\end_inset
+
+Jake VanderPlas (2016).
+ 
+\shape italic
+Python Data Science Handbook
+\shape default
+ O'Reilly Media
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "ScrumRef"
+key "Scrum"
+literal "false"
+
+\end_inset
+
+Jeff Sutherland (2014).
+ 
+\shape italic
+Scrum:
+ The Art of Doing Twice the Work in Half the Time
+\shape default
+.
+ Crown Currency
+\end_layout
+
+\end_body
+\end_document

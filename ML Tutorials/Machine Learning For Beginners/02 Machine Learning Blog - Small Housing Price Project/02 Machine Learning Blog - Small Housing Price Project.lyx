@@ -1,0 +1,5525 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{bbm}
+\usepackage{bbold} %does this have any problems with \bigtimes operator defined below?
+%\usepackage{graphicx}
+%\usepackage{background}
+\usepackage{amsmath}
+
+\allowdisplaybreaks %allows page breaks for multiline formula
+
+\setlength{\parskip}{\medskipamount} %small, med or big
+\setlength{\parindent}{0pt}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\definecolor{backDef}{HTML}{8fb8e0}
+\definecolor{titleDef}{HTML}{ffffff}
+\definecolor{backCalc}{HTML}{E8F2F2}
+
+\newcommand{\BIGOP}[1]{\mathop{\mathchoice%
+{\raise-0.22em\hbox{\huge $#1$}}%
+{\raise-0.05em\hbox{\Large $#1$}}{\hbox{\large $#1$}}{#1}}}
+
+
+%New Stuff, different from usual preambles:
+\usepackage{algorithm,algpseudocode}
+\usepackage{xcolor}
+
+\usepackage{lineno}
+\definecolor{mypink1}{HTML}{8f194c}
+\renewcommand{\linenumberfont}{\normalfont\sffamily\scriptsize\color{mypink1}}
+\end_preamble
+\use_default_options true
+\begin_modules
+tcolorbox
+theorems-ams
+figs-within-sections
+theorems-sec
+theorems-ams-extended
+eqs-within-sections
+\end_modules
+\maintain_unincluded_children no
+\language english
+\language_package default
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "ae" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 3
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\pdf_quoted_options "pdfstartview={XYZ null null 1.25}"
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\boxbgcolor #8fb8e0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1cm
+\rightmargin 2cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\listings_params "mathescape=true"
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\bigtimes}{\BIGOP{\times}}
+{\boldsymbol{\times}}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\d}[1]{\frac{\textrm{d}}{\textrm{d}#1}}
+{\frac{\textrm{d}}{\textrm{d}#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\pp}{\,\,.}
+{\,\,.}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\kk}{\,\,,}
+{\,\,,}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\image}{\textrm{Image}}
+{\textrm{Image}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\r}{\textrm{Ran}}
+{\textrm{Ran}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\k}{\textrm{Ker}}
+{\textrm{Ker}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\tr}{\textrm{tr}}
+{\textrm{tr}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\i}[4]{\int_{#1}^{#2}#3\textrm{d}#4}
+{\int_{#1}^{#2}#3\textrm{d}#4}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sgn}[1]{\textrm{sgn}\left(#1\right)}
+{\textrm{sgn}\left(#1\right)}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sym}[1]{\textrm{Sym}_{#1}}
+{\textrm{Sym}_{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\set}[2]{\left\{  #1\,:\,#2\right\}  }
+{\left\{ #1\,:\,#2\right\} }
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sc}[2]{\left\langle #1,\,#2\right\rangle _{\mathcal{K}_{\underline{\alpha}}}}
+{\left\langle #1,\,#2\right\rangle _{\mathcal{K}_{\underline{\alpha}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Sc}[2]{\left\langle #1,\,#2\right\rangle _{L_{\underline{\alpha}}^{2}}}
+{\left\langle #1,\,#2\right\rangle _{L_{\underline{\alpha}}^{2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\no}[1]{\left\Vert #1\right\Vert _{\mathcal{K}_{\underline{\alpha}}}}
+{\left\Vert #1\right\Vert _{\mathcal{K}_{\underline{\alpha}}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\No}[1]{\left\Vert #1\right\Vert _{L_{\underline{\alpha}}^{2}}}
+{\left\Vert #1\right\Vert _{L_{\underline{\alpha}}^{2}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\K}{\mathcal{K}}
+{\mathcal{K}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\hs}{\hspace{-1bp}}
+{{\color{red}|}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\proofend}{\hfill\square}
+{\hfill\square}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ownname}[1]{\textsc{#1}}
+{\textsc{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bskip}[1]{\vspace*{-\baselineskip}\,\vspace*{#1cm}}
+{\updownarrow#1}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\VertOp}[3]{\!\!\!\begin{array}{c}
+{\scriptstyle #3}\bskip{-0.1}\\
+#1\bskip{-0.1}\\
+{\scriptstyle #2}
+\end{array}\!\!\!}
+{#1_{#2}^{#3}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\sto}{\square}
+{\square}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ost}{\blacksquare}
+{\blacksquare}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup 
+\backslash
+hypersetup{linkcolor=black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Quick Info
+\end_layout
+
+\begin_layout Description
+Audience:
+ This part of the series is made for beginners with basic knowledge in Python programming.
+ You only need to make sure you have Jupyter notebooks and all Python modules installed (see previous part).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+who want a practical approach to get familiarized with the most important concepts in machine learning before consulting other more detailed guides or textbooks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Goal:
+ Familiarization of the main concepts in machine learning;
+ softening the learning curve.
+\end_layout
+
+\begin_layout Description
+Resources:
+ On my GitHub page you can download the whole guide as a PDF or find the links to all parts of this series.
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+PDF:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/Machine_Learning_Blog.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+All
+\begin_inset space ~
+\end_inset
+
+Parts:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/ML%20Guide%20Links"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Python
+\begin_inset space ~
+\end_inset
+
+Script
+\begin_inset space ~
+\end_inset
+
+(Main):
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "KagglC1 - SmallProject.py"
+target "https://github.com/ynaghibi/BlogsResources/blob/main/KagglC1%20-%20SmallProject.py"
+literal "false"
+
+\end_inset
+
+ (save this in the same folder as the csv files from Kaggle before you run it)
+\end_layout
+
+\begin_layout Description
+Kaggle:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "House Prices - Advanced Regression Techniques"
+target "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/submissions"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+Last
+\begin_inset space ~
+\end_inset
+
+Edit:
+ 2025 April 03
+\end_layout
+
+\begin_layout Description
+Credits:
+ This guide is inspired by chapter 2 in "
+\shape italic
+Hands on Machine Learning
+\shape default
+" by Aurélien Geron 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HoML"
+literal "false"
+
+\end_inset
+
+.
+ I am in no way associated with the author himself.
+ This guide does not replicate any parts of the book,
+ and the code presented here is based on publicly available source codes (see Colab).
+ 
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+First
+\begin_inset space ~
+\end_inset
+
+published
+\begin_inset space ~
+\end_inset
+
+on
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+How to read this guide
+\end_layout
+
+\begin_layout Standard
+The source codes labeled as "
+\series bold
+Jupyter Cell
+\series default
+" can be pasted in one python file in order to create a new Jupyter cell each time.
+ The code labeled as "
+\series bold
+Test
+\series default
+" is rather meant to deepen the understanding of the main code,
+ but it is not required for any subsequent cell.
+ There is also some code labeled as "
+\series bold
+Output
+\series default
+",
+ which just shows you the result of one of those cells.
+\end_layout
+
+\begin_layout Section
+Machine Learning with Python
+\end_layout
+
+\begin_layout Standard
+In this guide we will start with some basics,
+ then look at a small project example in order to get quickly familiarized with important concepts.
+ and finally we will look at a bigger project example to show you further crucial steps in more detail.
+\end_layout
+
+\begin_layout Standard
+The procedure in both projects is basically the same.
+ First the dataset is transformed in a way that improves the quality of the 
+\series bold
+prediction model
+\series default
+.
+ This is done by sending the dataset through a so called 
+\series bold
+pipeline
+\series default
+.
+ Then the model is trained with known targets,
+ before it can predict unknown targets from another dataset (supervised learning).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+TODO
+\series default
+:
+ Does this belong to quick info?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+First Steps
+\end_layout
+
+\begin_layout Standard
+Usually each Jupyter cell generates at most one output in the interactive window,
+ but it can be very practical to have multiple outputs per cell.
+ This can be achieved with the 
+\series bold
+\size footnotesize
+display
+\series default
+\size default
+ function.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from IPython.display import 
+\family sans
+\series bold
+display
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display("Hello world!")
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display("second message")
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\begin_inset CommandInset label
+LatexCommand label
+name "alg: first step display"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Next we need to import the modules 
+\series bold
+\size footnotesize
+numpy
+\series default
+\size default
+,
+ 
+\series bold
+\size footnotesize
+pandas
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+matplotlib.pyplot
+\series default
+\size default
+ (usually abbreviated as 
+\series bold
+\size footnotesize
+np
+\series default
+\size default
+,
+ 
+\series bold
+\size footnotesize
+pd
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+plt
+\series default
+\size default
+) that will help us to explore the data.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import 
+\family sans
+\series bold
+numpy
+\family default
+\series default
+ as np
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import 
+\family sans
+\series bold
+pandas
+\family default
+\series default
+ as pd
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+import 
+\family sans
+\series bold
+matplotlib
+\family default
+\series default
+.pyplot as plt
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\begin_inset CommandInset label
+LatexCommand label
+name "alg: first step modules"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+While 
+\series bold
+\size footnotesize
+pyplot
+\series default
+\size default
+ is used for visualizing data,
+ the 
+\series bold
+\size footnotesize
+numpy
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+pandas
+\series default
+\size default
+ modules provide us with three types of extensively used data containers.
+ Before we dive deeper into the machine learning aspect of this guide,
+ we should get familiar with the containers.
+\end_layout
+
+\begin_layout Subsubsection
+Numpy and Pandas Containers
+\end_layout
+
+\begin_layout Description
+Numpy
+\begin_inset space ~
+\end_inset
+
+Arrays or ndarray typed variables are often used for numerical computations due to their better performance speed.
+ The data is stored in n-dimensional arrays.
+ E.g.
+ a 1D array has the shape of a vector,
+ a 2D array the shape of a matrix,
+ etc.
+ The type of data stored in any given ndarray must always be the same,
+ but other than that the data can have any valid type.
+\end_layout
+
+\begin_layout Description
+Pandas
+\begin_inset space ~
+\end_inset
+
+DataFrames are always 2 dimensional arrays,
+ but in addition their rows and columns have a label as well.
+ In this sense they are very similar to spreadsheets or SQL tables.
+ Usually column lables describe the 
+\series bold
+features 
+\series default
+of the data,
+ while the row labels describe each 
+\series bold
+sample
+\series default
+ or instance (usually an index).
+ For this purpose dataframes can store data with different types,
+ even when they are stored in the same dataframe variable.
+ 
+\end_layout
+
+\begin_layout Description
+Pandas
+\begin_inset space ~
+\end_inset
+
+Series are the 1 dimensional version of dataframes.
+ This means their row has a label,
+ and they can contain mixed data types as well.
+ Whenever we extract a single column from a dataframe,
+ we can obtain a pandas series.
+ 
+\end_layout
+
+\begin_layout Standard
+For beginners it can be helpful to print the type of these containers,
+ because sometimes it can be hard to distinguish them.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to get familiar with these types,
+ it can be helpful to construct simple containers manually.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Numpy ndarrays 
+\end_layout
+
+\begin_layout Standard
+First we want to create a numpy.ndarray with 3 rows and 5 columns with the number 1.2 in each entry.
+ Then we want another ndarray containing 2 matrices with each having 4 columns,
+ 3 rows,
+ where the entries are defined by a custom function.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+myarray
+\family default
+\series default
+ = np.full((3,5),
+ 1.2)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(myarray)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def myfunc(z,
+ y,
+ x):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return x*100 + y*10 + z
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+myfuncarray
+\family default
+\series default
+ = np.fromfunction(myfunc,
+ (2,3,4)) 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(myfuncarray)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here we defined the dimensions of the ndarrays in n-tuples,
+ which refers to the 
+\series bold
+shape
+\series default
+ of an array.
+ If you read these shapes from right to left,
+ they give you the number of the columns,
+ rows,
+ etc.
+ 
+\end_layout
+
+\begin_layout Standard
+An important programming concept is that we can operate along dimensional directions in arrays.
+ Each dimensional direction is called an 
+\series bold
+axis
+\series default
+.
+ E.g.
+ moving along the direction of columns gives us the 
+\begin_inset Formula $0$
+\end_inset
+
+th axis,
+ rows give use the 
+\begin_inset Formula $1$
+\end_inset
+
+st axis,
+ etc.
+ This makes more sense,
+ once we look at the output of the previous code.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([[1.2,
+ 1.2,
+ 1.2,
+ 1.2,
+ 1.2],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       [1.2,
+ 1.2,
+ 1.2,
+ 1.2,
+ 1.2],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       [1.2,
+ 1.2,
+ 1.2,
+ 1.2,
+ 1.2]])
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([[[  0.,
+ 100.,
+ 200.,
+ 300.],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        [ 10.,
+ 110.,
+ 210.,
+ 310.],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        [ 20.,
+ 120.,
+ 220.,
+ 320.]],
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       [[  1.,
+ 101.,
+ 201.,
+ 301.],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        [ 11.,
+ 111.,
+ 211.,
+ 311.],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        [ 21.,
+ 121.,
+ 221.,
+ 321.]]])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+You can see a bunch of nested arrays inside brackets.
+ The arrays in the inner most brackets have the same lengths as the number of columns.
+ More precisely,
+ the 
+\begin_inset Formula $i$
+\end_inset
+
+-th inner array has the entries of the 
+\begin_inset Formula $i$
+\end_inset
+
+-th matrix-row,
+ which has the form row_i = [e_1,
+ ...,
+ e_n] with 
+\begin_inset Formula $n$
+\end_inset
+
+ being the number of columns (along 
+\series bold
+axis 0
+\series default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+On the next level we have a matrix of the form [row_1,
+ ...,
+ row_m],
+ where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the number of rows (
+\series bold
+axis 1
+\series default
+).
+ Then we could have an array of matrices of the form [matrix_1,
+ matrix_2,
+ ...] (
+\series bold
+axis 2
+\series default
+).
+ This pattern continues until we reached the last axis of the array.
+ 
+\end_layout
+
+\begin_layout Standard
+E.g.
+ the first array in the previous output has axis 0 length = 5 and axis 1 length = 3,
+ while the scond array has axis 0 length = 4,
+ axis 1 length = 3 and axis 2 length = 2.
+ 
+\end_layout
+
+\begin_layout Standard
+The axis length should not be confused with the 
+\series bold
+array dimension
+\series default
+ (or 
+\series bold
+rank
+\series default
+),
+ which equals the total amount of axes.
+ (As we will see later,
+ only 2 dimensional arrays can be used for "pipelines".) In our example 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+ is a 3D and 
+\series bold
+\size footnotesize
+myarray
+\series default
+\size default
+ a 2D array.
+\end_layout
+
+\begin_layout Standard
+Another important value is the 
+\series bold
+size
+\series default
+ of an array defined as the product of all axis lengths in the array shape (e.g.
+ 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+ has the size 
+\begin_inset Formula $4\cdot3\cdot2=12$
+\end_inset
+
+).
+ Obviously,
+ each time we want to reshape an array in order to rearrange its entries,
+ the array size must be the same.
+\end_layout
+
+\begin_layout Standard
+Of course viewing arrays like in the previous output can become hard to read at some point,
+ but in most cases we do not have to look at the entirety of the entries.
+ For instance we can get a single entry like 
+\series bold
+\size footnotesize
+myfuncarray[1,0,3]
+\series default
+\size default
+.
+ Since the indices start counting at 0,
+ this would give you the entry of the first row in the fourth column from the second matrix in 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+,
+ which is 301.0 in this case.
+\end_layout
+
+\begin_layout Standard
+With Python's 
+\series bold
+slice indices
+\series default
+ we can also replace each single index with a whole range of them.
+ The syntax requires colons like in 
+\begin_inset Formula $i_{\mathrm{Start}}$
+\end_inset
+
+ :
+ 
+\begin_inset Formula $i_{\mathrm{End}}$
+\end_inset
+
+,
+ where the indices start at 
+\begin_inset Formula $i_{\mathrm{Start}}$
+\end_inset
+
+ and end at 
+\begin_inset Formula $i_{\mathrm{End}}-1$
+\end_inset
+
+.
+ It is also possible to omit 
+\begin_inset Formula $i_{\mathrm{Start}}$
+\end_inset
+
+,
+ in which case the indices will start at 0.
+ Similarly,
+ we can omit 
+\begin_inset Formula $i_{\mathrm{End}}$
+\end_inset
+
+ in order reach the last available index.
+ E.g.
+ if we only wanted the second and third columns of the very first matrix in 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+,
+ then we would write 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+simplematr
+\family default
+\series default
+ = myfuncarray[0,
+ :,
+ 1:3]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(simplematr)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(myfuncarray.shape)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(simplematr.shape)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(simplematr.ndim)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The output shows us that,
+ while the shape of the original 3D array 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+ is (2,
+ 3,
+ 4),
+ the new array 
+\series bold
+\size footnotesize
+simplematr
+\series default
+\size default
+ has the shape (3,
+ 2) and a dimension of 2.
+ 
+\end_layout
+
+\begin_layout Standard
+Note that changing the contents of an array slice also changes the contents of the original array accordingly.
+ E.g.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+simplematr[2,1] = 999
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(myfuncarray[0,2,2]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+gives us the output 
+\series bold
+\size footnotesize
+999
+\series default
+\size default
+.
+ If you do not want this kind of behavior,
+ you can copy the content with the 
+\series bold
+\size footnotesize
+.copy()
+\series default
+\size default
+ method.
+ E.g.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+simplematr2
+\family default
+\series default
+ = myfuncarray[1,
+ :,
+ 1:3].
+\family sans
+\series bold
+copy
+\family default
+\series default
+()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+simplematr2[2,1] = 999
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(myfuncarray[1,2,2]) 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ passes the array "by value" instead of passing it "by reference".
+ In general we say in the first case that the variable is returned as a 
+\series bold
+view
+\series default
+ and in the second case as a 
+\series bold
+copy
+\series default
+.
+ As a result the output of this code is 
+\series bold
+\size footnotesize
+221
+\series default
+\size default
+ instead of 
+\series bold
+\size footnotesize
+999
+\series default
+\size default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In some cases it is important to leave the dimension of an array untouched (e.g.
+ for "pipelines").
+ This can be done either by using the colons syntax in each index component,
+ or we can write single indices in double brackets.
+ The following code shows both approaches.
+ Here we want the second matrix of 
+\series bold
+\size footnotesize
+myfuncarray
+\series default
+\size default
+ in form of a 3D array instead of 2D.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+newmatr_1 =  myfuncarray[1:2,:,:]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+newmatr_2 =  myfuncarray[[1],:,:]
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+You can check that both 
+\series bold
+\size footnotesize
+newmatr_1
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+newmatr_2
+\series default
+\size default
+ have the shape (1,
+ 3,
+ 4).
+ This means that these arrays have only one element along their axis 2,
+ which is the matrix we wanted.
+ 
+\end_layout
+
+\begin_layout Standard
+At this point we have already learned a lot of important concepts.
+ Still there are two main concepts left that are very versatile especially when combined together:
+ 
+\series bold
+pointwise operations
+\series default
+ and 
+\series bold
+broadcasting
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In general a pointwise operation is applied on each entry of the involved arrays.
+ Therefore,
+ binary operations (like "+",
+ "*",
+ "<") can only be used for arrays with the same shape.
+ Under certain conditions it is possible that arrays can be reshaped automatically in a way that these operations become possible (broadcasting).
+ 
+\end_layout
+
+\begin_layout Standard
+Before we explain the rules of broadcasting in general,
+ we want to look at a simple example,
+ where we introduce two 1 dimensional arrays with the size 7.
+ Note that in this case the shape is not written as (7) but rather as (7,
+ ).
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+arr_1 = np.fromfunction(
+\family sans
+\series bold
+lambda
+\family default
+\series default
+ x:
+ x,
+ 
+\family sans
+\series bold
+(7,)
+\family default
+\series default
+,
+ 
+\family sans
+\series bold
+dtype
+\family default
+\series default
+ = np.int32)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+arr_2 = np.fromfunction(lambda x:
+ 2*x,
+ (7,),
+ dtype = np.int32)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(arr_1)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(arr_2)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(arr_1 
+\family sans
+\series bold
++
+\family default
+\series default
+ arr_2)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(arr_2 
+\family sans
+\series bold
+<
+\family default
+\series default
+ 5)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(arr_2[arr_2 
+\family sans
+\series bold
+<
+\family default
+\series default
+ 5])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here we kept the code short by making use of lambda functions,
+ and with 
+\series bold
+\size footnotesize
+dtype
+\series default
+\size default
+ we can replace the default float number outputs with easier to read integers.
+ 
+\end_layout
+
+\begin_layout Standard
+Thanks to the broadcasting rules it is possible to apply binary operations on an array and a number like in 
+\series bold
+\size footnotesize
+arr_2 < 5
+\series default
+\size default
+:
+ By simply repeating the number 5 along all axes of 
+\series bold
+\size footnotesize
+arr_2
+\series default
+\size default
+,
+ we get matching shapes.
+ Note that numbers can be considered as special types of arrays with the shape (1,).
+ The last line in the output 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([0,
+ 1,
+ 2,
+ 3,
+ 4,
+ 5,
+ 6])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([ 0,
+  2,
+  4,
+  6,
+  8,
+ 10,
+ 12])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([ 0,
+  3,
+  6,
+  9,
+ 12,
+ 15,
+ 18])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([ True,
+  True,
+  True,
+ False,
+ False,
+ False,
+ False])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([0,
+ 2,
+ 4])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+demonstrates a very hepful technique,
+ where a 1D array with boolean values is used to select rows from another 1D array with the same size.
+ 
+\end_layout
+
+\begin_layout Standard
+For now it should be enough to understand the broadcasting rule for numbers,
+ but you should be already able to understand the rules in general,
+ if you want:
+\end_layout
+
+\begin_layout Enumerate
+If two arrays of the same dimension 
+\begin_inset Formula $k$
+\end_inset
+
+ have the shape (
+\begin_inset Formula $n_{0}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\dots$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{k-1}$
+\end_inset
+
+) and (
+\begin_inset Formula $m_{0},$
+\end_inset
+
+ 
+\begin_inset Formula $\dots$
+\end_inset
+
+,
+ 
+\begin_inset Formula $m_{k-1}$
+\end_inset
+
+),
+ respectively,
+ and if 
+\begin_inset Formula $n_{i}\neq m_{i}$
+\end_inset
+
+ always implies that 
+\begin_inset Formula $n_{i}=1$
+\end_inset
+
+ or 
+\begin_inset Formula $m_{i}=1$
+\end_inset
+
+,
+ then both arrays can be matched.
+ E.g if 
+\begin_inset Formula $n_{i}=1$
+\end_inset
+
+,
+ then there is only one element along the axis 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ This element can then be repeated 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ times along the axis 
+\begin_inset Formula $i$
+\end_inset
+
+ until the axis lengths of both arrays match.
+ 
+\end_layout
+
+\begin_layout Enumerate
+If two arrays do not have the same dimension,
+ then the dimension of the smaller array is matched by appending axis lengths of "1" to the left of the shape-tupel.
+ E.g.
+ arrays with the shape (7,
+ 5,
+ 3) and (3,
+ ) are matched by changing the shape of the second array to (1,
+ 1,
+ 3),
+ and then repeating the entries in the first and second axes until the second array has the shape (7,
+ 5,
+ 3) as well.
+\end_layout
+
+\begin_layout Standard
+Of course these broadcasting rules do not apply in other circumstances,
+ when there is an axis 
+\begin_inset Formula $i$
+\end_inset
+
+ such that 
+\begin_inset Formula $n_{i}\neq m_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{i}\neq1\neq m_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+c.sum(axis=1) # sum across rows
+\end_layout
+
+\begin_layout Plain Layout
+c.sum(axis=(0,2)) # sum across matrices and columns
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+replace entry or element by the word data
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Pandas dataframes and series
+\end_layout
+
+\begin_layout Standard
+Some of our knowledge about numpy ndarrays can be applied to pandas series and dataframes as well.
+ Before diving in,
+ we want to define a dataframe 
+\series bold
+\size footnotesize
+df_customer_raw
+\series default
+\size default
+ storing the data of customer transactions.
+ Each transaction has features like the product type (in form of strings),
+ the price (floats) and the amount of products sold (integers).
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+customer_list = [
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ["Laptop",
+ 1199.99,
+ 10],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ["Phone",
+ 812.35,
+ 50],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ["Tablet",
+ 300.0,
+ 1],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ["Monitor",
+ 511.5,
+ 35],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer_raw = 
+\family sans
+\series bold
+pd.DataFrame
+\family default
+\series default
+(data = customer_list)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer_raw)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If we define dataframes like this,
+ their column and row labels will be automatically generated indices.
+ More useful labels can be added,
+ if we initialize dataframe with the arguments 
+\series bold
+\size footnotesize
+index
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+columns
+\series default
+\size default
+.
+ In our example the rows have customer names and the columns feature names.
+ The following code also shows how we can get the numpy ndarray version of a dataframe by using 
+\series bold
+\size footnotesize
+.values
+\series default
+\size default
+.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer = pd.DataFrame(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    data = customer_list,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+index
+\family default
+\series default
+ = ["Alice",
+ "Charles",
+ "Bob",
+ "Dan"],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+columns
+\family default
+\series default
+ = ["Product",
+ "Price",
+ "Sold"]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer
+\family sans
+\series bold
+.values
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The output
+\size footnotesize
+	
+\size default
+
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       
+\family sans
+\series bold
+Product	Price	Sold
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+Alice
+\family default
+\series default
+ 	Laptop	1199.99	10
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+Charles
+\family default
+\series default
+ 	Phone	812.35	50
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+Bob
+\family default
+\series default
+ 	Tablet	300.00	1
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+Dan
+\family default
+\series default
+ 	Monitor	511.50	35
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+array([['Laptop',
+ 1199.99,
+ 10],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       ['Phone',
+ 812.35,
+ 50],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       ['Tablet',
+ 300.0,
+ 1],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+       ['Monitor',
+ 511.5,
+ 35]],
+ dtype=
+\family sans
+\series bold
+object
+\family default
+\series default
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Output
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+shows that the datatype of the ndarray is 
+\series bold
+\size footnotesize
+object
+\series default
+\size default
+.
+ This type already contains mixed types like strings or floats.
+ Otherwise it would not be possible to mix different types in a ndarray.
+ (Note that 
+\series bold
+\size footnotesize
+object
+\series default
+\size default
+ types can decrease the computational time compared to pure numerical types.)
+\end_layout
+
+\begin_layout Standard
+If we want to access specific columns or rows from dataframes,
+ they will be converted to 1D pandas series.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display( df_customer["Product"] ) #column
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display( df_customer.
+\family sans
+\series bold
+loc
+\family default
+\series default
+["Bob"] ) #row
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display( df_customer.
+\family sans
+\series bold
+loc
+\family default
+\series default
+["Bob",
+ "Product"] ) #data 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here 
+\series bold
+\size footnotesize
+.loc
+\series default
+\size default
+ gives us the row for the specified label 
+\series bold
+\size footnotesize
+"Bob"
+\series default
+\size default
+.
+ If we ommitted 
+\series bold
+\size footnotesize
+.loc
+\series default
+\size default
+,
+ we would get a column with the label 
+\series bold
+\size footnotesize
+"Bob"
+\series default
+\size default
+,
+ which does not exist in our dataframe.
+ 
+\end_layout
+
+\begin_layout Standard
+In the last line we could have also used the more intuitive syntax 
+\series bold
+\size footnotesize
+df_customer["Product"]["Bob"]
+\series default
+\size default
+ instead,
+ if we only wanted to read the data.
+ However,
+ if we intend to write the data,
+ it is not guaranteed whether the data is returned as a copy or a view (it depends on internal implementations).
+\end_layout
+
+\begin_layout Standard
+In addition,
+ using 
+\series bold
+\size footnotesize
+.loc
+\series default
+\size default
+ makes our intention clear,
+ whether we want to refer to so called 
+\series bold
+label positions
+\series default
+ or 
+\series bold
+ordinal positions
+\series default
+.
+ E.g.
+ 
+\series bold
+\size footnotesize
+"Bob"
+\series default
+\size default
+ is a label position,
+ but its ordinal position in our 
+\series bold
+\size footnotesize
+index
+\series default
+\size default
+ list is 2 (while e.g.
+ 
+\series bold
+\size footnotesize
+"Alice"
+\series default
+\size default
+ has the position 0).
+ Therefore an alternative way to access Bob's customer data is 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer.
+\family sans
+\series bold
+iloc
+\family default
+\series default
+[2]
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+because 
+\series bold
+\size footnotesize
+.iloc
+\series default
+\size default
+ always accesses ordinal positions.
+ One of the advantages of ordinal positions is that we can use slicing in combination with 
+\series bold
+\size footnotesize
+.iloc
+\series default
+\size default
+.
+ Just like for numpy ndarrays the slicing method preserves the dimension of the 2D dataframe instead of transforming it into a 1D series.
+ E.g.
+ 
+\series bold
+\size footnotesize
+df_customer.iloc[0:2]
+\series default
+\size default
+ gives us the first two customers in form of a new dataframe.
+ Of course slicing also works for series.
+ 
+\end_layout
+
+\begin_layout Standard
+The general rule of thumb is to use 
+\series bold
+\size footnotesize
+.iloc
+\series default
+\size default
+ for ordinal and 
+\series bold
+\size footnotesize
+.loc
+\series default
+\size default
+ for label positions.
+ Otherwise it can create confusing situations,
+ where integer numbers are used as labels,
+ while these labels do not represent the real ordinal positions.
+ 
+\end_layout
+
+\begin_layout Standard
+As you may have noticed in some of the outputs,
+ each series extracted from dataframes has a name equal to the label of the corresponding column or row.
+ Conversely,
+ we can add a series as a new column in dataframes.
+ So let us add the birthyear for each customer with 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+birthcol = pd.Series(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    data = [1990,
+ 2000,
+ 1980,
+ 2010],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+name
+\family default
+\series default
+ = "Birthyear",
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    index = df_customer.
+\family sans
+\series bold
+index
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer[birthcol.name] = birthcol
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+It is a very intuitive and short way to create new columns like this,
+ but if assume that 
+\series bold
+\size footnotesize
+df_customer
+\series default
+\size default
+ was a slice of a bigger dataframe,
+ then this syntax would not guarantee whether the original dataframe would also change after creating the new column.
+ In those cases it is recommended to use the 
+\series bold
+\size footnotesize
+.assign
+\series default
+\size default
+ method,
+ which requires a lengthier syntax like 
+\series bold
+\size footnotesize
+df_customer = df_customer.assign(Birthyear = birthcol)
+\series default
+\size default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For starters it is already sufficient to apply 
+\series bold
+\size footnotesize
+.assign
+\series default
+\size default
+.
+ for this reason only.
+ However,
+ another situation where 
+\series bold
+\size footnotesize
+.assign
+\series default
+\size default
+ is useful is for so called 
+\series bold
+chaining
+\series default
+ methods,
+ when we want to execute several operations in one expression without the need for intermediate variables.
+ 
+\end_layout
+
+\begin_layout Standard
+This means we can create multiple new columns in a single 
+\series bold
+\size footnotesize
+.assign
+\series default
+\size default
+ chain,
+ even if some columns depend on others initialized earlier in the chain.
+ We only have to make sure that 
+\series bold
+\size footnotesize
+.assign
+\series default
+\size default
+ does not try to initialize all columns simultaneously.
+ This is why we have to wrap the initializations in lambdas or functions,
+ which "delay" these operations until they are called sequentially in the chain:
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_new = (df_customer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    .
+\family sans
+\series bold
+assign
+\family default
+\series default
+(Revenue = lambda df:
+ df["Price"] * df["Sold"])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    .
+\family sans
+\series bold
+assign
+\family default
+\series default
+(HighProfit = lambda df:
+ df["Revenue"] > 11000)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_new)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Note that with this method changing any data inside 
+\series bold
+\size footnotesize
+df_new
+\series default
+\size default
+ does not change 
+\series bold
+\size footnotesize
+df_customer
+\series default
+\size default
+ at all.
+ You also do not have to fear causing too much overhead thanks to "Copy-on-Write",
+ where the memory of the new and the original dataframes share the same memory until they are changed.
+\end_layout
+
+\begin_layout Standard
+Last but not least,
+ we can remove existing columns or rows with 
+\series bold
+\size footnotesize
+.drop
+\series default
+\size default
+.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer = df_customer.
+\family sans
+\series bold
+drop
+\family default
+\series default
+(columns=["Sold",
+  "Price"])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+df_customer = df_customer.
+\family sans
+\series bold
+drop
+\family default
+\series default
+(index=["Bob"])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(df_customer)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+A more traditional way of dropping columns or rows is to use axes arguments,
+ i.e.
+ we could have also used 
+\series bold
+\size footnotesize
+df_customer.drop("Bob",
+ axis = 0)
+\series default
+\size default
+ for dropping a row.
+\end_layout
+
+\begin_layout Standard
+Now that you are familiar enough with numpy/pandas data container,
+ you should have a solid knowledge to move on.
+ However,
+ if you want to deepen your knowledge at some point,
+ I can recommend Aurélien Géron's online tutorial on Colab 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Geron Colab"
+literal "false"
+
+\end_inset
+
+.
+ Or you can try out books like 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "VanderPlas"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Getting the data
+\end_layout
+
+\begin_layout Standard
+Before analyzing the data,
+ we have to load them into the system.
+ There are multiple ways to do this.
+ For instance we can automatically download and extract the data,
+ or even use SQL directly in Jupyter cells in order to handle large datasets efficiently.
+ 
+\end_layout
+
+\begin_layout Standard
+For now we want to keep it simple.
+ Download and extract the 
+\series bold
+train.csv
+\series default
+ and 
+\series bold
+test.csv
+\series default
+ files manually from the Kaggle competition site,
+ and save them in the same folder as your Python script.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from pathlib import Path
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+sLocal_Folder_Path = Path(__file__).parent.resolve()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+train_file_path = sLocal_Folder_Path / "train.csv" # Uses OS-appropriate separator
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+predict_file_path = sLocal_Folder_Path / "test.csv"
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+housing
+\family default
+\series default
+ = pd.read_csv(train_file_path)
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+housing_unknown
+\family default
+\series default
+ = pd.read_csv(predict_file_path)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(housing)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(housing_unknown)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here we have stored the data as 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+housing_unknown
+\series default
+\size default
+ dataframe variables.
+ After running this cell you will see the table structure of 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+housing_unknown
+\series default
+\size default
+.
+ The output should show you a few example rows for both dataframes.
+ 
+\end_layout
+
+\begin_layout Standard
+It should also tell you that 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ has 81 columns,
+ while 
+\series bold
+\size footnotesize
+housing_unknown
+\series default
+\size default
+ has only 80 columns.
+ The missing column are the targets,
+ which are the house sales prices we will have to predict before submitting it on Kaggle.
+ The dataset from 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ on the other hand will be used to train and test our prediction models before our final submission.
+\end_layout
+
+\begin_layout Subsection
+Small Project
+\end_layout
+
+\begin_layout Standard
+Make sure you add the Jupyter cells from the previous 
+\series bold
+"First Steps"
+\series default
+ section (algorithms 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg: first step display"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alg: first step modules"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+In our case one 
+\series bold
+sample
+\series default
+ is the data of a single house with 
+\series bold
+features
+\series default
+ like the total number of bedrooms,
+ while the target is simply the sale price.
+ Before we can train a model we have to separate the target-column from the feature columns.
+\end_layout
+
+\begin_layout Standard
+In addition,
+ we need to separate the so called 
+\series bold
+train set
+\series default
+ from the 
+\series bold
+test set
+\series default
+.
+ One way to achieve this is by using the function 
+\series bold
+\size footnotesize
+train_test_split
+\series default
+\size default
+.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.model_selection import train_test_split
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+train_set,
+ test_set = train_test_split(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing,
+ test_size = 0.05,
+ random_state = 42
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+housing
+\family default
+\series default
+ = train_set.drop("SalePrice",
+ axis=1)
+\end_layout
+
+\begin_layout LyX-Code
+
+\family sans
+\series bold
+\size footnotesize
+housing_targets
+\family default
+\series default
+ = train_set["SalePrice"].copy()
+\end_layout
+
+\begin_layout LyX-Code
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_final_test = test_set.drop("SalePrice",
+ axis=1)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_targets_final_test = test_set["SalePrice"].copy()
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The test set will help us to measure the performance of our model.
+ This is done by computing the predicted target 
+\begin_inset Formula $h\left(x_{i}\right)$
+\end_inset
+
+ based on the feature values of a sample 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+,
+ and comparing it with the known targets 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+.
+ Then we can estimate the error with measures like the so called 
+\series bold
+root mean square error
+\series default
+ (
+\series bold
+RMSE
+\series default
+)
+\begin_inset Formula 
+\[
+\mathrm{RMSE}=\sqrt{\frac{1}{n}\sum_{i=1}^{n}\left(y_{i}-h\left(x_{i}\right)\right)^{2}}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of samples.
+ A smaller RMSE indicates that the prediction of our model is more precise.
+\end_layout
+
+\begin_layout Standard
+Of course we could use the samples 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ and targets 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ from the training set,
+ i.e.
+ the old dataset on which our model was trained.
+ The problem is that the model prediction may be much worse for samples that are not part of the training set.
+ The reason is that models can "get used" so much to the training set that they do not generalize very well.
+\end_layout
+
+\begin_layout Standard
+This is called overfitting.
+ It usually occurs,
+ when the prediction model has too much freedom for finding highly specialized rules that can only predict the trained targets very well.
+ 
+\end_layout
+
+\begin_layout Standard
+Therefore it is more reliable to calculate an error measure on the test set instead of train set.
+ In our case the test set has only about 0.05% (
+\series bold
+\size footnotesize
+test_size
+\series default
+\size default
+) of the original samples.
+ Usually you want a more reliable test set ratio,
+ but in our case it would decrease the number of samples in the training set too much,
+ if 
+\series bold
+\size footnotesize
+test_size
+\series default
+\size default
+ was much larger.
+\end_layout
+
+\begin_layout Standard
+Next we want to choose one of the prediction models that is already available from the 
+\series bold
+\size footnotesize
+sklearn
+\series default
+\size default
+-module.
+ For this simple example a linear regressor is fine.
+ 
+\series bold
+Regressors
+\series default
+ are used for predicting numerical targets like the house sale prices,
+ otherwise we would need a 
+\series bold
+classifier
+\series default
+ for predicting categorical targets (categorical targets are also called labels,
+ which should not be confused with the column/row labels of dataframes).
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%%
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.linear_model import LinearRegression
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.pipeline import Pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.pipeline import make_pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.preprocessing import StandardScaler
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.impute import SimpleImputer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.preprocessing import FunctionTransformer
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.compose import TransformedTargetRegressor
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.compose import ColumnTransformer
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As you can see,
+ we have also imported other modules that introduce new objects like 
+\series bold
+pipelines
+\series default
+ and 
+\series bold
+transformers
+\series default
+.
+ Before we continue with our project,
+ we should take a look at a simple application of pipelines and transformers,
+ where the values of the features 
+\series bold
+\size footnotesize
+"OverallQual"
+\series default
+ 
+\size default
+and
+\size footnotesize
+ 
+\series bold
+"GarageArea"
+\series default
+\size default
+ are incremented by +1 and then multiplied with the factor 2 after being transformed by the 
+\series bold
+\size footnotesize
+example_pipe
+\series default
+\size default
+ pipeline.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% Test
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def increment_func(x):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return x + 1
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def double_func(x):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return x * 2
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+example_pipe = 
+\family sans
+\series bold
+make_pipeline
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+FunctionTransformer
+\family default
+\series default
+(func = increment_func),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+FunctionTransformer
+\family default
+\series default
+(func = double_func)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+example_df = housing[["OverallQual",
+ "GarageArea"]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+example_pipe.fit(example_df)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+example_trafo = example_pipe.transform(example_df)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(example_df)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+display(example_trafo)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+If e.g.
+ an entry in 
+\series bold
+\size footnotesize
+example_df
+\series default
+\size default
+ equals 
+\begin_inset Formula $3$
+\end_inset
+
+,
+ then the corresponding entry in 
+\series bold
+\size footnotesize
+example_trafo
+\series default
+\size default
+ is 
+\begin_inset Formula $\left(3+1\right)\cdot2=8$
+\end_inset
+
+.
+ Note that the double brackets in 
+\series bold
+\size footnotesize
+housing[["OverallQual",
+ "GarageArea"]]
+\series default
+\size default
+ result in a dataframe with two feature columns from the 
+\series bold
+\size footnotesize
+housing
+\series default
+\size default
+ dataframe.
+ If we used only single brackets,
+ we would have obtained a 1D pandas.series,
+ which cannot be used as an input for pipelines.
+\end_layout
+
+\begin_layout Standard
+In the next subsection,
+ we will explain pipelines and transformers in a broader context.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Terminology
+\end_layout
+
+\begin_layout Description
+Features or 
+\series bold
+Attributes
+\series default
+ are measurable properties of samples,
+ although some samples may also have missing features.
+\end_layout
+
+\begin_layout Description
+
+\series bold
+Targets
+\series default
+ are known properties in the in train sets,
+ but usually unknown other datasets.
+\end_layout
+
+\begin_layout Description
+Prediction
+\begin_inset space ~
+\end_inset
+
+Models in supervised learning tasks can predict targets based on their training and their train set.
+ There are also unsupervised prediction models like cluster search models.
+ Depending on whether the targets are numerical or categorical,
+ prediction models are also called 
+\series bold
+regressors
+\series default
+ or 
+\series bold
+classifiers
+\series default
+,
+ respectively.
+\end_layout
+
+\begin_layout Description
+Estimators are objects in 
+\series bold
+\size footnotesize
+sklearn
+\series default
+\size default
+ that can train their internal prediction model with their 
+\series bold
+\size footnotesize
+.fit
+\series default
+(
+\series bold
+X,
+ y
+\series default
+) 
+\size default
+method (where 
+\series bold
+\size footnotesize
+X 
+\series default
+\size default
+are the features and the targets 
+\series bold
+\size footnotesize
+y
+\series default
+\size default
+ of the train set).
+ Estimators also have the method 
+\series bold
+\size footnotesize
+.predict
+\series default
+(...)
+\size default
+ to predict unknown targets.
+\end_layout
+
+\begin_layout Description
+Transformers are a bit similar to estimators,
+ although 
+\series bold
+\size footnotesize
+.fit
+\series default
+(...) 
+\size default
+has a more general meaning in the sense that it adjusts its internal parameters to the input of 
+\series bold
+\size footnotesize
+.fit
+\series default
+(...)
+\size default
+ (a second argument is not needed here).
+ Afterwards we can use the 
+\series bold
+\size footnotesize
+.transform
+\series default
+(...)
+\size default
+ method to return a transformed version of its argument.
+ For the purpose of calling e.g.
+ 
+\series bold
+\size footnotesize
+trafo.fit
+\series default
+(
+\series bold
+X
+\series default
+)
+\size default
+ first and then 
+\series bold
+\size footnotesize
+X = trafo.transform
+\series default
+(
+\series bold
+X
+\series default
+),
+
+\size default
+ we may use the shortcut 
+\series bold
+\size footnotesize
+X = trafo.fit_transform
+\series default
+(
+\series bold
+X
+\series default
+)
+\size default
+ instead,
+ which also has a faster computation speed.
+ 
+\end_layout
+
+\begin_layout Description
+Pipelines are objects that contain a sequence of transformers,
+ estimators or other existing pipelines (for nested pipelines).
+ Each pipeline has a 
+\series bold
+\size footnotesize
+.fit
+\series default
+(...)
+\size default
+ method that accepts a single 2D container as input,
+ which must be either a pandas.dataframe or 2D numpy.ndarray.
+ This input is then passed to the argument of
+\series bold
+\size footnotesize
+ .fit_transform
+\series default
+(...)
+\size default
+ of the first transformer in the pipeline.
+ Afterwards the output of this 
+\series bold
+\size footnotesize
+.fit_transform
+\series default
+(...)
+\size default
+ is used for the input of the next transformer,
+ etc.
+ This process is repeated until the last element of the pipeline is reached,
+ where only 
+\series bold
+\size footnotesize
+.fit
+\series default
+(...)
+\size default
+ is called.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Finally,
+ the pipeline object exposes the methods of its last element,
+ i.e.
+ the pipeline has a 
+\series bold
+\size footnotesize
+.transform
+\series default
+(...)
+\size default
+ or 
+\series bold
+\size footnotesize
+.predict
+\series default
+(...)
+\size default
+ method depending on whether its last element is a transformer or estimator,
+ respectively.
+\end_layout
+
+\begin_layout Description
+Column
+\begin_inset space ~
+\end_inset
+
+Transformers are used to apply different transformers to selected sets of columns only.
+ They are initialized by a list of 3-tuples,
+ each of them representing a separate transformation.
+ The first 3-tuple component is the string name of the transformation,
+ the second component a transformer or even a whole pipeline,
+ and the third component a list of feature labels for selecting the desired columns (in the case of 2D ndarrays these labels are integer indices).
+\end_layout
+
+\begin_layout Subsubsection
+Making predictions
+\end_layout
+
+\begin_layout Standard
+Now we can take a look at the pipelines we are interested in.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+target_trafo = 
+\family sans
+\series bold
+make_pipeline
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+SimpleImputer
+\family default
+\series default
+(strategy = "mean",
+ add_indicator=True),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+FunctionTransformer
+\family default
+\series default
+(func = np.log,
+ inverse_func = np.exp),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+StandardScaler
+\family default
+\series default
+()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+feature_log_pipeline = 
+\family sans
+\series bold
+make_pipeline
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy="mean"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    FunctionTransformer(func = np.log),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    StandardScaler()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+feature_pipeline = 
+\family sans
+\series bold
+make_pipeline
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy="mean"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    StandardScaler()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Here 
+\series bold
+\size footnotesize
+make_pipeline
+\series default
+\size default
+ inserts the transformers in the piplines in the order it receives them in its argument list.
+ E.g.
+ the 
+\series bold
+\size footnotesize
+target_trafo
+\series default
+\size default
+ pipeline (which will be applied to the house sale price sales later) first applies the 
+\series bold
+\size footnotesize
+SimpleImputer
+\series default
+\size default
+ transformer,
+ which replaces possibly missing values with the mean value of all available values in the column (see 
+\series bold
+\size footnotesize
+strategy = "mean"
+\series default
+\size default
+).
+ Even if there are no missing values,
+ we may sometimes require that the very first transformer returns a 2D numpy.ndarray,
+ which can be more practical for the remaining transformers in the pipeline.
+ In this case 
+\series bold
+\size footnotesize
+SimpleImputer
+\series default
+\size default
+ transforms a dataframe into a 2D ndarray.
+\end_layout
+
+\begin_layout Standard
+Unlike for the transformation of features,
+ we need to transform the targets back to their original form,
+ i.e.
+ an inverse transformation must be available.
+ In 
+\series bold
+\size footnotesize
+SimpleImputer
+\series default
+\size default
+ this is ensured by the argument 
+\series bold
+\size footnotesize
+add_indicator=True
+\series default
+\size default
+.
+\end_layout
+
+\begin_layout Standard
+Next we have the 
+\series bold
+\size footnotesize
+FunctionTransformer
+\series default
+\size default
+ in the 
+\series bold
+\size footnotesize
+target_trafo
+\series default
+\size default
+ pipeline.
+ In our example it simply returns the logarithm of its input values.
+ For now it suffices to know that this will help our linear regressor to make better predictions.
+ This time we make sure the inverse transformation is available by adding the argument 
+\series bold
+\size footnotesize
+inverse_func = np.exp
+\series default
+\size default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The final transformer for our targets is 
+\series bold
+\size footnotesize
+StandardScaler
+\series default
+\size default
+,
+ which centers the values around the mean of all values and scales it in a way that will improve the performance of our linear regressor.
+ Otherwise unscaled values can become biased in favor of the available values on the whole scale instead of the actually occuring amount of values.
+\end_layout
+
+\begin_layout Standard
+In a similar fashion we define the other pipelines 
+\series bold
+\size footnotesize
+feature_log_pipeline
+\series default
+\size default
+ and 
+\series bold
+\size footnotesize
+feature_pipeline
+\series default
+\size default
+ for the features.
+ Another way to use the function transformer is to define custom functions.
+ In our case we want to be able to calculate the ratio of two columns.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+def 
+\family sans
+\series bold
+column_ratio
+\family default
+\series default
+(X):
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    return X[:,[0]] / X[:,[1]]
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+feature_ratio = make_pipeline(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    SimpleImputer(strategy="median"),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+FunctionTransformer
+\family default
+\series default
+(func = 
+\family sans
+\series bold
+column_ratio
+\family default
+\series default
+),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    StandardScaler()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As mentioned earlier,
+ it is possible to apply transformers on different columns separately,
+ if we use column transformers.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+column_trafo = 
+\family sans
+\series bold
+ColumnTransformer
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    transformers = [
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ('num_log',
+ feature_log_pipeline,
+ ["GrLivArea"]),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ('ratio',
+ feature_ratio,
+ ["BedroomAbvGr",
+ "GrLivArea"]),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+        ('num',
+ feature_pipeline,
+ ["OverallQual",
+ "GarageArea"])
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+remainder
+\family default
+\series default
+ = "drop"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+For the sake of simplicity,
+ we ignore all other columns in the dataset (
+\series bold
+\size footnotesize
+remainder = "drop"
+\series default
+\size default
+),
+ although there are other options available to handle the remaining columns.
+\end_layout
+
+\begin_layout Standard
+An alternative to 
+\series bold
+\size footnotesize
+make_pipeline
+\series default
+\size default
+ is the 
+\series bold
+\size footnotesize
+Pipeline
+\series default
+\size default
+ class itself,
+ which allows us to name each object in the pipeline manually.
+ These names can play a role for the automatic optimization of so called 
+\series bold
+hyperparameters
+\series default
+,
+ which are those parameters that cannot be adjusted by the prediction models during their training phase.
+ However,
+ we will not need to optimize any hyperparameter for this simple project.
+\end_layout
+
+\begin_layout Standard
+Finally we can combine our previous pipelines and our prediction model in a single pipeline.
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+regressor_pipeline = 
+\family sans
+\series bold
+Pipeline
+\family default
+\series default
+([
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ('features',
+ column_trafo),
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    ('linear',
+ LinearRegression())
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+])
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Afterwards we can assemble all pipelines in a single estimator.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+model = 
+\family sans
+\series bold
+TransformedTargetRegressor
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+transformer
+\family default
+\series default
+ = target_trafo,
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    
+\family sans
+\series bold
+regressor
+\family default
+\series default
+ = regressor_pipeline
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+model.fit(housing,
+ housing_targets)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_predicted_prices = model.
+\family sans
+\series bold
+predict
+\family default
+\series default
+(housing_final_test)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+More precisely,
+ this is called a 
+\series bold
+meta-estimator
+\series default
+,
+ which enhances the functionality of normal estimators.
+ Here the meta-estimator 
+\series bold
+\size footnotesize
+TransformedTargetRegressor
+\series default
+\size default
+ automatically applies the inverse functions to the predicted targets.
+ This is a bit less error-prone than applying each inverse function manually.
+ 
+\end_layout
+
+\begin_layout Standard
+Of course there are much more interesting meta-estimators like 
+\series bold
+\size footnotesize
+RandomizedSearchCV
+\series default
+\size default
+ used for hyperparameter tuning,
+ or meta-estimators used for mixing different types of estimators.
+ 
+\end_layout
+
+\begin_layout Standard
+In our simplified project the linear regressor is enough to make decent predictions.
+ We store them in the 
+\series bold
+\size footnotesize
+housing_predicted_prices
+\series default
+\size default
+ variable before measuring the RMSE with the test set.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+from sklearn.metrics import root_mean_squared_error
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+lin_rmse = 
+\family sans
+\series bold
+root_mean_squared_error
+\family default
+\series default
+(
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    housing_targets_final_test,
+ housing_predicted_prices
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+print((lin_rmse / 1e3).round(2),
+ "thousand dollar RMSE for housing prices")
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The resulting RMSE should be around 28 thousand dollars.
+ Finally,
+ we can create a 
+\series bold
+\size footnotesize
+submission.csv
+\series default
+\size default
+ file that has the right format for submitting it on Kaggle.
+ 
+\begin_inset Float algorithm
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phantom{}$
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+#%% 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+housing_predicted_prices = model.
+\family sans
+\series bold
+predict
+\family default
+\series default
+(housing_unknown)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+submission = pd.DataFrame({
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    'Id':
+ housing_unknown['Id'],
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+    'SalePrice':
+ housing_predicted_prices
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+})
+\end_layout
+
+\begin_layout LyX-Code
+
+\size footnotesize
+submission.to_csv(sLocal_Folder_Path / 'submission.csv',
+ index=False)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Jupyter Cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The final score should be below 0.20 (less means better),
+ which is acceptable for such a small project.
+ 
+\end_layout
+
+\begin_layout Standard
+Before moving on,
+ you can play around a little bit by removing the logarithm-transformations to see how the linear regressor performs.
+ You can also replace it with another regressor like the 
+\series bold
+\size footnotesize
+RandomForestRegressor
+\series default
+\size default
+,
+ where the performance does not depend very much on log-transformations or the standard scaler (except in extreme cases).
+\end_layout
+
+\begin_layout Standard
+Once you have understood the most important concepts in this small project,
+ you can tackle the same problem with more sophisticated methods in the big project that comes next.
+ This will give you a much better score and a deeper understanding of the problems occuring in machine learning.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Kaggle Housing"
+key "Kaggle Housing Competition"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "House Prices - Advanced Regression Techniques"
+target "https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/submissions"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "AnacondaInstall"
+key "Install Anaconda"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://github.com/ageron/handson-ml3/blob/main/INSTALL.md"
+target "https://github.com/ageron/handson-ml3/blob/main/INSTALL.md"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "GeronColab"
+key "Geron Colab"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://colab.research.google.com/github/ageron/handson-ml3/blob/main/index.ipynb#scrollTo=-KAqK1NXk8Eu"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "KagglData.py"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/ynaghibi/BlogsResources/blob/main/KagglDataC1.py"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "HoML"
+key "HoML"
+literal "false"
+
+\end_inset
+
+Aurélien Géron (2019).
+ 
+\shape italic
+Hands-On Machine Learning with Scikit-Learn,
+ Keras,
+ and Tensorflow:
+ Concepts,
+ Tools,
+ and Techniques to Build Intelligent Systems
+\shape default
+.
+ O'Reilly Media
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "VanderPlas"
+key "VanderPlas"
+literal "false"
+
+\end_inset
+
+Jake VanderPlas (2016).
+ 
+\shape italic
+Python Data Science Handbook
+\shape default
+ O'Reilly Media
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "ScrumRef"
+key "Scrum"
+literal "false"
+
+\end_inset
+
+Jeff Sutherland (2014).
+ 
+\shape italic
+Scrum:
+ The Art of Doing Twice the Work in Half the Time
+\shape default
+.
+ Crown Currency
+\end_layout
+
+\end_body
+\end_document

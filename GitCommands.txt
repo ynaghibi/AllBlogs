@@ -1,0 +1,19 @@
+For initializing the repository, use
+
+
+git init
+git add .
+git commit -m "did some changes"
+git branch -M main
+git remote add origin https://github.com/ynaghibi/AllBlogs.git
+git push -u origin main
+
+
+
+For updating files, use
+
+
+git add .                      # stages all files or subfolders
+git commit -m "Added images"   # commits changes
+git push origin main           # uploads to GitHub
+
