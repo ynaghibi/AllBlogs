@@ -5,16 +5,19 @@ https://ynaghibi.github.io/AllBlogs//ML%20Tutorials//Machine%20Learning%20For%20
 
 and then you add the folder names
 
-01_Machine_Learning_Blog_Introduction
+01_Introduction
 
-02_Machine_Learning_Blog_Small_Housing_PriceProject
+02_Small Housing_Price_Project
 
-03%20Machine%20Learning%20Blog%20-%20Big%20Housing%20Price%20Project
+03_Big_Housing_Price_Project
 
 
 E.g.
 
-https://ynaghibi.github.io/AllBlogs//ML_Tutorials//Machine_Learning_For_Beginners//01_Machine_Learning_Blog_Introduction
+https://ynaghibi.github.io/AllBlogs//ML%20Tutorials//Machine%20Learning%20For%20Beginners//01_Introduction
 
+https://ynaghibi.github.io/AllBlogs//ML%20Tutorials//Machine%20Learning%20For%20Beginners//02_Small Housing_Price_Project
+
+https://ynaghibi.github.io/AllBlogs//ML%20Tutorials//Machine%20Learning%20For%20Beginners//
 
 
