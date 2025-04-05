@@ -1,4 +1,4 @@
-For initializing the repository, use
+For initializing the repository, open GitBash in root folder and use
 
 
 git init
@@ -10,7 +10,7 @@ git push -u origin main
 
 
 
-For updating files, use
+For updating files, open GitBash in root folder and use
 
 
 git add .                      # stages all files or subfolders
