@@ -104,6 +104,8 @@ div.float-figure img {
 div.float-figure img:hover {
     transform: scale(2.5);
     cursor: zoom-out;
+	 z-index: 200;  /* higher order than sidebar */
+	 position: relative;
 }
 
 
@@ -113,7 +115,7 @@ div.float-figure img:hover {
   height: 100%;
   width: 250px;
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   background-color: #111;
@@ -223,6 +225,7 @@ function closeNav() {
         if body_tag:
             sidebar_soup = BeautifulSoup(custom_sidebar, 'html.parser')
             body_tag.insert(0, sidebar_soup)
+            #body_tag.append(sidebar_soup) #alternative: at tag-bottom
             for elem in body_tag.find_all(recursive=False):
                 if elem != sidebar_soup:
                     elem['class'] = elem.get('class', []) + ['main-content']
