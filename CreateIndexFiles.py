@@ -1,6 +1,4 @@
 
-
-
 import os
 from bs4 import BeautifulSoup
 
@@ -107,6 +105,100 @@ div.float-figure img:hover {
     transform: scale(2.5);
     cursor: zoom-out;
 }
+
+
+
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  position: fixed;     /* Stay fixed while scrolling */
+  top: 10px;           /* Distance from the top of the viewport */
+  left: 10px;          /* Distance from the left edge */
+  z-index: 1100;       /* Make sure it appears above the sidebar */
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+"""
+
+    custom_sidebar = """
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  
+  <a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/01_Introduction/">Intro</a>
+  
+  <a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/02_Small_Housing_Price_Project/">Small Housing Project</a>
+  
+  <a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/03_Big_Housing_Price_Project/">Big Housing Project</a>
+  
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Contents</button> 
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
 """
 
     try:
@@ -125,6 +217,15 @@ div.float-figure img:hover {
             new_style = soup.new_tag('style')
             new_style.string = custom_css
             soup.head.append(new_style)
+		
+			# Find the style tag and append custom CSS
+        body_tag = soup.find('body')
+        if body_tag:
+            sidebar_soup = BeautifulSoup(custom_sidebar, 'html.parser')
+            body_tag.insert(0, sidebar_soup)
+            for elem in body_tag.find_all(recursive=False):
+                if elem != sidebar_soup:
+                    elem['class'] = elem.get('class', []) + ['main-content']
 
         # Remove empty math tags
         for math_tag in soup.find_all('math'):

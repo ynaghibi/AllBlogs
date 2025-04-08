@@ -181,14 +181,100 @@ div.float-figure img:hover {
     transform: scale(2.5);
     cursor: zoom-out;
 }
+
+
+
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  position: fixed;     /* Stay fixed while scrolling */
+  top: 10px;           /* Distance from the top of the viewport */
+  left: 10px;          /* Distance from the left edge */
+  z-index: 1100;       /* Make sure it appears above the sidebar */
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
 </style>
 </head>
 <body dir="auto">
-<div class="standard" id="magicparlabel-1"> </div>
-<div class="standard" id="magicparlabel-9"> </div>
-<div class="standard" id="magicparlabel-25">  </div>
-<div class="standard" id="magicparlabel-30"><br/></div>
-<div class="toc"><h2 class="tochead section">Table of Contents</h2>
+<div class="sidebar main-content" id="mySidebar">
+<a class="closebtn" href="javascript:void(0)" onclick="closeNav()">×</a>
+<a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/01_Introduction/">Intro</a>
+<a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/02_Small_Housing_Price_Project/">Small Housing Project</a>
+<a href="https://ynaghibi.github.io/AllBlogs/ML_Tutorials/Machine_Learning_For_Beginners/03_Big_Housing_Price_Project/">Big Housing Project</a>
+</div>
+<div class="main-content" id="main">
+<button class="openbtn" onclick="openNav()">☰ Contents</button>
+</div>
+<script class="main-content">
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<div class="standard main-content" id="magicparlabel-1"> </div>
+<div class="standard main-content" id="magicparlabel-9"> </div>
+<div class="standard main-content" id="magicparlabel-25">  </div>
+<div class="standard main-content" id="magicparlabel-30"><br/></div>
+<div class="toc main-content"><h2 class="tochead section">Table of Contents</h2>
 <div class="lyxtoc-1">
 <div class="lyxtoc-2">
 <a class="tocentry" href="#magicparlabel-35">1 Quick Info</a>
@@ -210,7 +296,7 @@ div.float-figure img:hover {
 </div>
 </div>
 </div>
-<section>
+<section class="main-content">
 <h2 class="section" id="magicparlabel-35"><span class="section_label">1</span> Quick Info</h2>
 <dl class="description">
 <dt class="description_label">Audience:</dt>
@@ -232,7 +318,7 @@ div.float-figure img:hover {
 <dd class="description_item" id="magicparlabel-47"></dd>
 </dl>
 </section>
-<section>
+<section class="main-content">
 <h2 class="section" id="magicparlabel-52"><span class="section_label">2</span> Introduction</h2>
 <div class="standard" id="magicparlabel-53">I want to use this introduction briefly to explain how to <i>learn</i> the basics of machine learning, because it can be quite intimidating for newcomers with little background knowledge. Even without much knowledge about Python, you can learn language on the fly by following this guide, but if you want more preparations, then you should get familiar with the most basic concepts (<b>variables, lists, tuples, dictionaries, functions, loops, if-else-statements</b>). You will also encounter other concepts like <b>lambda functions</b> or <b>classes</b>, but our use cases are rather simple. </div>
 <div class="standard" id="magicparlabel-54">You will probably find out that learning Python modules for machine learning or data scientists almost feels like learning a new language, anyway. </div>
@@ -241,7 +327,7 @@ div.float-figure img:hover {
 <div class="standard" id="magicparlabel-57">Of course practical books can have a very steep learning curve, but if you use learning techniques like <b>priming</b>, <b>incubation</b>, and the <b>24-hour rule</b> combined with practical coding you can get started with machine learning within just a few days or weeks. This means that you do should not try to memorize everything from the beginning, but rather skim through the working examples, and revisit the details later on, while experimenting with parts of the code. The more you repeat the first-skim-then-revisit-cycle the better you will get without wasting too much time on less important details. </div>
 <div class="standard" id="magicparlabel-66">One way to soften the steep learning curve is to start with crash courses like this one. So without further ado, let us begin. </div>
 </section>
-<section>
+<section class="main-content">
 <h2 class="section" id="magicparlabel-67"><span class="section_label">3</span> Setup and installations</h2>
 <div class="standard" id="magicparlabel-68">In order to run the Python code you only need a webbrowser, if you use Google’s Colab Btw. Aurélien Geron’s source code used in his book is also publicly available on Colab, even though it may not be very beginner friendly (see [<a href="#LyXCite-Geron_Colab"><span class="bib-label">GeronColab</span></a>]). </div>
 <div class="standard" id="magicparlabel-69">However, I recommend running everything locally on your computer for the ease of use. We will be using Visual Code, which has a lot of nice comfort functions that are probably not available on Colab. The only downside is that the initial installation takes a bit of effort and about 10 GB space in total. </div>
@@ -290,7 +376,7 @@ div.float-figure img:hover {
 </div>
 </section>
 </section>
-<section>
+<section class="main-content">
 <h2 class="section" id="magicparlabel-131"><span class="section_label">4</span> Kaggle competitions</h2>
 <div class="standard" id="magicparlabel-132">One way to practice machine learning is to participate in Kaggle competitions. We will demonstrate this with a competition for beginners: <a href="https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/submissions">House Prices - Advanced Regression Techniques</a>. There you can download the required data, which in this case is a rather small zip file. </div>
 <h2 class="bibliography">References</h2>
